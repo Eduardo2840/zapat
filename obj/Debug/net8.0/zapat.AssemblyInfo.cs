@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("zapat")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d35ce7187fc0d17fe753b8677c9cd385f8970779")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cd95c45d8040b9f79768d41a1b31824b240fb89e")]
 [assembly: System.Reflection.AssemblyProductAttribute("zapat")]
 [assembly: System.Reflection.AssemblyTitleAttribute("zapat")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

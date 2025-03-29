@@ -13,6 +13,22 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\edutr\\OneDrive\\Escritorio\\zapatilla\\zapat\\wwwroot\\img\\logo1.jpg",
+      "PackagePath": "staticwebassets\\img\\logo1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\edutr\\OneDrive\\Escritorio\\zapatilla\\zapat\\wwwroot\\img\\logo2.jpg",
+      "PackagePath": "staticwebassets\\img\\logo2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\edutr\\OneDrive\\Escritorio\\zapatilla\\zapat\\wwwroot\\img\\logo3.jpg",
+      "PackagePath": "staticwebassets\\img\\logo3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\edutr\\OneDrive\\Escritorio\\zapatilla\\zapat\\wwwroot\\img\\logo4.jpg",
+      "PackagePath": "staticwebassets\\img\\logo4.jpg"
+    },
+    {
       "Id": "C:\\Users\\edutr\\OneDrive\\Escritorio\\zapatilla\\zapat\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
