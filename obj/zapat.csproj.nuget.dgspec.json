@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\edutr\\OneDrive\\Escritorio\\zapatilla\\zapat\\zapat.csproj": {}
+    "C:\\Users\\ADMIN\\Documents\\ProyectoProgram\\zapat\\zapat\\zapat.csproj": {}
   },
   "projects": {
-    "C:\\Users\\edutr\\OneDrive\\Escritorio\\zapatilla\\zapat\\zapat.csproj": {
+    "C:\\Users\\ADMIN\\Documents\\ProyectoProgram\\zapat\\zapat\\zapat.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\edutr\\OneDrive\\Escritorio\\zapatilla\\zapat\\zapat.csproj",
+        "projectUniqueName": "C:\\Users\\ADMIN\\Documents\\ProyectoProgram\\zapat\\zapat\\zapat.csproj",
         "projectName": "zapat",
-        "projectPath": "C:\\Users\\edutr\\OneDrive\\Escritorio\\zapatilla\\zapat\\zapat.csproj",
-        "packagesPath": "C:\\Users\\edutr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\edutr\\OneDrive\\Escritorio\\zapatilla\\zapat\\obj\\",
+        "projectPath": "C:\\Users\\ADMIN\\Documents\\ProyectoProgram\\zapat\\zapat\\zapat.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ADMIN\\Documents\\ProyectoProgram\\zapat\\zapat\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\edutr\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
