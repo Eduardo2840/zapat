@@ -13,6 +13,22 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\ADMIN\\Documents\\ProyectoProgram\\zapat\\zapat\\wwwroot\\img\\brand_01.png",
+      "PackagePath": "staticwebassets\\img\\brand_01.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Documents\\ProyectoProgram\\zapat\\zapat\\wwwroot\\img\\brand_02.png",
+      "PackagePath": "staticwebassets\\img\\brand_02.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Documents\\ProyectoProgram\\zapat\\zapat\\wwwroot\\img\\brand_03.png",
+      "PackagePath": "staticwebassets\\img\\brand_03.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Documents\\ProyectoProgram\\zapat\\zapat\\wwwroot\\img\\brand_04.png",
+      "PackagePath": "staticwebassets\\img\\brand_04.png"
+    },
+    {
       "Id": "C:\\Users\\ADMIN\\Documents\\ProyectoProgram\\zapat\\zapat\\wwwroot\\img\\logo1.jpg",
       "PackagePath": "staticwebassets\\img\\logo1.jpg"
     },
