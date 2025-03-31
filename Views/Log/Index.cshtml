@@ -1,0 +1,35 @@
+@{
+    ViewData["Title"] = "Login";
+}
+<br><br><br><br><br>
+<div class="container d-flex justify-content-center">
+    <div class="login-card">
+        <div class="text-center mb-4">
+            <img src="~/img/brand_01.png" alt="" class="logo">
+        </div>
+        <h2 class="text-center">Inicia sesión</h2>
+        <form>
+            <div class="mb-3">
+                <input type="email" class="form-control" placeholder="Correo electrónico" required>
+            </div>
+
+            <div class="mb-3">
+                <input type="password" class="form-control" placeholder="Contraseña" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Continuar</button>
+        </form>
+       
+    
+        
+        <div class="text-center mt-3" >
+            <a class="privacy-link" asp-controller="Register" asp-action="Index">¿No tiene una cuenta? Regístrese</a>
+        </div>
+    </div>
+</div>
+<br><br><br><br><br>
+
+
+
+
+<link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+
