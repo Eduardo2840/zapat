@@ -1,0 +1,40 @@
+.login-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+.logo {
+  width: 150px;
+}
+h2 {
+  font-size: 1.5rem;
+  color: #000;
+}
+p {
+  font-size: 0.9rem;
+  color: #333;
+}
+.form-control {
+  height: 45px;
+  font-size: 1rem;
+}
+.btn-primary {
+  background-color: #1664c0;
+  border: none;
+  height: 45px;
+  font-size: 1rem;
+}
+.btn-primary:hover {
+  background-color: #1458a0;
+}
+.privacy-link {
+  font-size: 0.85rem;
+  color: #1664c0;
+  text-decoration: none;
+}
+.privacy-link:hover {
+  text-decoration: underline;
+}

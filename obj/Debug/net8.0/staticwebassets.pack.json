@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\zapat.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\ADMIN\\Documents\\ProyectoProgram\\zapat\\zapat\\wwwroot\\css\\catalogo.css",
+      "PackagePath": "staticwebassets\\css\\catalogo.css"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Documents\\ProyectoProgram\\zapat\\zapat\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
       "Id": "C:\\Users\\ADMIN\\Documents\\ProyectoProgram\\zapat\\zapat\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
