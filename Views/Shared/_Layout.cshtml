@@ -27,8 +27,16 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Catalogo" asp-action="Index">Catalogo</a>
                         </li>
+                        <li class="nav-item"></li>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Contacto" asp-action="Index">Contacto</a>
+                        </li>
                     </ul>
                     <partial name="_LoginPartial" />
+                    <a class="nav-icon position-relative text-decoration-none" href="#">
+                      <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+             
+                    </a>
+                    
                 </div>
             </div>
         </nav>
@@ -190,5 +198,6 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </body>
 </html>
