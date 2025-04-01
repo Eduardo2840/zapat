@@ -25,7 +25,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-bottom: 60px; /* Espaciado entre el contenido principal y el footer */
 }
 footer {
   margin-top: auto; /* Asegura que el footer esté siempre al fondo */
