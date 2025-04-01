@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ADMIN\\Documents\\ProyectoProgram\\zapat\\zapat\\zapat.csproj": {}
+    "C:\\Users\\ADMIN\\zapat\\zapat.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ADMIN\\Documents\\ProyectoProgram\\zapat\\zapat\\zapat.csproj": {
+    "C:\\Users\\ADMIN\\zapat\\zapat.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ADMIN\\Documents\\ProyectoProgram\\zapat\\zapat\\zapat.csproj",
+        "projectUniqueName": "C:\\Users\\ADMIN\\zapat\\zapat.csproj",
         "projectName": "zapat",
-        "projectPath": "C:\\Users\\ADMIN\\Documents\\ProyectoProgram\\zapat\\zapat\\zapat.csproj",
+        "projectPath": "C:\\Users\\ADMIN\\zapat\\zapat.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ADMIN\\Documents\\ProyectoProgram\\zapat\\zapat\\obj\\",
+        "outputPath": "C:\\Users\\ADMIN\\zapat\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config"
