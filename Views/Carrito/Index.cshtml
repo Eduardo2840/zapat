@@ -1,42 +1,60 @@
+@model List<string>
+
 @{
     ViewData["Title"] = "Carrito";
 }
 
 <body>
-    
     <div class="main-container">
         <div class="cart-container">
             <i class="fas fa-shopping-cart cart-icon"></i>
             <h2>Agrega productos y consigue envío gratis</h2>
             <p>Para obtener envío gratis suma productos de un mismo vendedor.</p>
-            <a class="nav-link text-dark" asp-area="" asp-controller="Catalogo" asp-action="Index" >Descubrir productos</a>
+            <a class="nav-link text-dark" asp-area="" asp-controller="Catalogo" asp-action="Index">Descubrir productos</a>
+            <div class="product-list">
+                <h3>Productos en el carrito</h3>
+                @if (Model == null || Model.Count == 0)
+                {
+                    <p>No hay productos en el carrito.</p>
+                }
+                else
+                {
+                    <ul>
+                        @foreach (var producto in Model)
+                        {
+                            <li>@producto</li>
+                            
+                        }
+                    </ul>
+                }
+            </div>
         </div>
-        
+
         <div class="summary-container">
-        <h3>Resumen de compra</h3>
-        <div class="summary-details">
-            <div class="row">
-                <span>Productos</span>
-                <span class="price">S/ 0</span>
+            <h3>Resumen de compra</h3>
+            <div class="summary-details">
+                <div class="row">
+                    <span>Productos</span>
+                    <span class="price">S/ @Model.Count</span>
+                </div>
+                <div class="row">
+                    <span>Envío</span>
+                    <span class="free">Gratis</span>
+                </div>
             </div>
-            <div class="row">
-                <span>Envío</span>
-                <span class="free">Gratis</span>
+
+            
+
+            <div class="total">
+                <span>Total</span>
+                <span class="price">S/ @(Model.Count * 250)</span> <!-- Ejemplo: cada producto cuesta S/ 250 -->
             </div>
+            <button class="buy-button">Continuar compra</button>
         </div>
-        <div class="total">
-            <span>Total</span>
-            <span class="price">S/ 0</span>
-        </div>
-        <button class="buy-button">Continuar compra</button>
-    </div>
     </div>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    
     <link rel="stylesheet" href="~/css/Carrito.css" asp-append-version="true">
     <link rel="stylesheet" href="~/css/bootstrap.min.css" asp-append-version="true">
     <link rel="stylesheet" href="~/css/templatemo.css" asp-append-version="true">
-     
 </body>
-
