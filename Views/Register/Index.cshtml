@@ -1,3 +1,4 @@
+@model zapat.Models.Register
 @{
     ViewData["Title"] = "Register";
 }
@@ -9,24 +10,32 @@
               src="~/img/marca.png" asp-append-version="true" style="max-height: 55px; object-fit: contain;"/>
         </div>
         <h2 class="text-center">Registrate</h2>
-        <form>
-            <div class="mb-3">
-                <input type="name" class="form-control" placeholder="Nombre" required>
+        <form method="post" asp-action="Registrar">
+            <div class="form-group">
+                <input asp-for="Nombre" class="form-control" placeholder="Nombre" required>
+                <span asp-validation-for="Nombre" class="text-danger"></span>
             </div>
-            <div class="mb-3">
-                <input type="lastname" class="form-control" placeholder="Apellido" required>
+            <div class="form-group  mt-2">
+                <input asp-for="Apellido" class="form-control" placeholder="Apellido" required>
+                <span asp-validation-for="Apellido" class="text-danger"></span>
             </div>
-            <div class="mb-3">
-                <input type="email" class="form-control" placeholder="Correo electrónico" required>
+            <div class="form-group  mt-2">
+                <input asp-for="Correo" class="form-control" placeholder="Correo electrónico" required>
+                <span asp-validation-for="Correo" class="text-danger"></span>
             </div>
-            <div class="mb-3">
-                <input type="password" class="form-control" placeholder="Contraseña" required>
+            <div class="form-group  mt-2">
+                <input asp-for="Contra" class="form-control" placeholder="Contraseña" required>
+                <span asp-validation-for="Contra" class="text-danger"></span>
             </div>
-            <button type="submit" class="btn btn-primary w-100">Registrar</button>
+            <button type="submit" class="btn btn-primary w-100 mt-2">Registrar</button>
         </form>
+        <h1>@ViewData["Message"]</h1>
         <div class="text-center mt-3">
             <a href="#" class="privacy-link">¿Ya tiene una cuenta?</a>
         </div>
+        @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }
     </div>
 </div>
 <br><br><br><br><br>
