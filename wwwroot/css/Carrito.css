@@ -1,0 +1,147 @@
+.search-bar {
+  display: flex;
+  width: 40%;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+}
+
+.search-bar button {
+  background-color: white;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-menu a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.user-menu i {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* MAIN */
+.main-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.cart-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 60%;
+  text-align: center;
+}
+
+.cart-icon {
+  font-size: 40px;
+  color: gray;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+p {
+  color: gray;
+}
+
+.discover-link {
+  color: blue;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* SUMMARY */
+.summary-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 30%;
+}
+
+h3 {
+  font-size: 18px;
+  color: gray;
+}
+
+.summary-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+h3 {
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.summary-details {
+  padding: 10px 0;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.free {
+  color: green;
+  font-weight: bold;
+}
+
+.coupons {
+  color: blue;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.buy-button {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.buy-button:hover {
+  background-color: #0056b3;
+}

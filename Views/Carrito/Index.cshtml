@@ -1,0 +1,42 @@
+@{
+    ViewData["Title"] = "Carrito";
+}
+
+<body>
+    
+    <div class="main-container">
+        <div class="cart-container">
+            <i class="fas fa-shopping-cart cart-icon"></i>
+            <h2>Agrega productos y consigue envío gratis</h2>
+            <p>Para obtener envío gratis suma productos de un mismo vendedor.</p>
+            <a class="nav-link text-dark" asp-area="" asp-controller="Catalogo" asp-action="Index" >Descubrir productos</a>
+        </div>
+        
+        <div class="summary-container">
+        <h3>Resumen de compra</h3>
+        <div class="summary-details">
+            <div class="row">
+                <span>Productos</span>
+                <span class="price">S/ 0</span>
+            </div>
+            <div class="row">
+                <span>Envío</span>
+                <span class="free">Gratis</span>
+            </div>
+        </div>
+        <div class="total">
+            <span>Total</span>
+            <span class="price">S/ 0</span>
+        </div>
+        <button class="buy-button">Continuar compra</button>
+    </div>
+    </div>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="~/css/Carrito.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/templatemo.css" asp-append-version="true">
+     
+</body>
+
