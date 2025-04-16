@@ -26,7 +26,9 @@ namespace zapat.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var productos = _context.DbSetProducto.ToList();
+            _logger.LogInformation("Productos: {0}", productos);
+            return View(productos);
         }
 
         public async Task<IActionResult> Details(int? id)
