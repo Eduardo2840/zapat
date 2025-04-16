@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Dynamic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using zapat.Data;
 using zapat.Models;
@@ -14,8 +16,6 @@ namespace zapat.Controllers
     
     public class CarritoController : Controller
     {
-
-        
         private readonly ILogger<CarritoController> _logger;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ApplicationDbContext _context;
@@ -29,7 +29,23 @@ namespace zapat.Controllers
         
         public IActionResult Index()
         {
-            return View();
+            var userIDSession = _userManager.GetUserName(User);
+            if (userIDSession == null)
+            {
+                ViewData["Message"] = "Por favor debe loguearse antes de agregar un producto";
+                return RedirectToAction("Index", "Catalogo");
+            }
+            var items = from o in _context.DbSetPreOrden select o;
+            items = items.Include(p => p.Producto).
+                    Where(w => w.UserName.Equals(userIDSession) &&
+                        w.Status.Equals("PENDIENTE"));
+            var itemsCarrito = items.ToList();
+            var total = itemsCarrito.Sum(c => c.Cantidad * c.Precio);
+
+            dynamic model = new ExpandoObject();
+            model.montoTotal = total;
+            model.elementosCarrito = itemsCarrito;
+            return View(model);
         }
 
         public async Task<IActionResult> Add(int? id)
