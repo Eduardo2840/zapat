@@ -2,25 +2,21 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace zapat.Models
 {
-    [Table("t_producto")]
-    public class Producto
+    [Table("t_order")]
+    public class Orden
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column("id")]
         public int Id { get; set; }
-        [NotNull]
-        public string? Name { get; set; }
-        [NotNull]
-        public Decimal Price { get; set; }
-        [NotNull]
+        public string? UserID { get; set; }
+        public Decimal Total { get; set; }
+        public DateTime Fecha { get; set; }
         public string? Status { get; set; }
-        [NotNull]
-        public string? ImageURL { get; set; }
     }
 }
