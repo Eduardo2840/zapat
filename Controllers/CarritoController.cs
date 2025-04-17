@@ -61,6 +61,7 @@ namespace zapat.Controllers
             {
                 var producto = await _context.DbSetProducto.FindAsync(id);
                 PreOrden proforma = new PreOrden();
+                
                 proforma.Producto = producto;
                 proforma.Precio = producto.Price;
                 proforma.Cantidad = 1;

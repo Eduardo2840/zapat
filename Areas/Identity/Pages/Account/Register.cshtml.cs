@@ -64,6 +64,10 @@ namespace zapat.Areas.Identity.Pages.Account
         /// </summary>
         public IList<AuthenticationScheme> ExternalLogins { get; set; }
 
+
+        public bool ShowConfirmationBanner { get; set; } = false;
+        public string EmailConfirmationUrl { get; set; }
+
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
@@ -136,7 +140,9 @@ namespace zapat.Areas.Identity.Pages.Account
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {
-                        return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
+                        EmailConfirmationUrl = callbackUrl;
+                        ShowConfirmationBanner = true;
+                        return Page();
                     }
                     else
                     {

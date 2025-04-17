@@ -3,13 +3,36 @@
 @{
     ViewData["Title"] = "Register";
 }
+@if (Model.ShowConfirmationBanner)
+{
+    <div id="confirmationBanner" class="alert alert-info">
+        <div class="alert-box">
+            <div class="alert-content">
+                <span class="alert-text">Haga Click para confirmar el correo electronico</span>
+            </div>
+            <div class="alert-actions">
+                <button class= "resend-btn" id="confirm-link" href="#" data-url="@Model.EmailConfirmationUrl" class="btn btn-success mt-2">
+        Confirmar correo</button>
+       
+            </div>
+        </div>
 
-<h1>@ViewData["Title"]</h1>
+        <div id="confirmResult" class="mt-2"></div>
+    </div>
+}
 
-<div class="row">
-    <div class="col-md-4">
+<br><br><br><br><br>
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<div class="container d-flex justify-content-center">
+    <div class="login-card">
+        <div class="text-center mb-4">
+            <img
+              src="~/img/marca.png" asp-append-version="true" style="max-height: 55px; object-fit: contain;"/>
+        </div>
+        <h2 class="text-center">Registrate</h2>
         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h2>Create a new account.</h2>
+     
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
             <div class="form-floating mb-3">
@@ -29,39 +52,47 @@
             </div>
             <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
         </form>
-    </div>
-    <div class="col-md-6 col-md-offset-2">
-        <section>
-            <h3>Use another service to register.</h3>
-            <hr />
-            @{
-                if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                {
-                    <div>
-                        <p>
-                            There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article
-                            about setting up this ASP.NET application to support logging in via external services</a>.
-                        </p>
-                    </div>
-                }
-                else
-                {
-                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                        <div>
-                            <p>
-                                @foreach (var provider in Model.ExternalLogins!)
-                                {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                }
-                            </p>
-                        </div>
-                    </form>
-                }
-            }
-        </section>
-    </div>
+   </div>
 </div>
-
+<br><br><br><br><br>
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const link = document.getElementById("confirm-link");
+            const banner = document.getElementById("confirmationBanner");
+            const resultDiv = document.getElementById("confirmResult");
+            if (link && banner) {
+                link.addEventListener("click", function (e) {
+                    e.preventDefault();
+
+                    const url = link.dataset.url;
+
+                    fetch(url)
+                        .then(response => response.text())
+                        .then(html => {
+                            const parser = new DOMParser();
+                            const doc = parser.parseFromString(html, 'text/html');
+                            const message = doc.querySelector('[role="alert"]')?.innerText;
+
+                            // 💥 Reemplazar TODO el contenido del banner
+                            banner.innerHTML = `
+                                <div class="alert alert-success mb-0">
+                                    ${message ?? 'Gracias por confirmar tu cuenta.'}
+                                </div>`;
+                        })
+                        .catch(error => {
+                            banner.innerHTML = `
+                                <div class="alert alert-danger mb-0">
+                                    ❌ Error al confirmar el correo.
+                                </div>`;
+                        });
+                });
+    }
+        });
+    </script>
 }
+
+<link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+
+
