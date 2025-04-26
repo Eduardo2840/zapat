@@ -264,16 +264,21 @@ namespace zapat.Data.Migrations
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<int?>("PagoId")
+                        .HasColumnType("integer");
+
                     b.Property<string>("Status")
                         .HasColumnType("text");
 
                     b.Property<decimal>("Total")
                         .HasColumnType("numeric");
 
-                    b.Property<string>("UserID")
+                    b.Property<string>("UserName")
                         .HasColumnType("text");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("PagoId");
 
                     b.ToTable("t_order");
                 });
@@ -296,9 +301,6 @@ namespace zapat.Data.Migrations
                     b.Property<string>("NumeroTarjeta")
                         .HasColumnType("text");
 
-                    b.Property<int?>("OrdenId")
-                        .HasColumnType("integer");
-
                     b.Property<DateTime>("PaymentDate")
                         .HasColumnType("timestamp with time zone");
 
@@ -309,8 +311,6 @@ namespace zapat.Data.Migrations
                         .HasColumnType("text");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("OrdenId");
 
                     b.ToTable("t_pago");
                 });
@@ -469,13 +469,13 @@ namespace zapat.Data.Migrations
                     b.Navigation("Producto");
                 });
 
-            modelBuilder.Entity("zapat.Models.Pago", b =>
+            modelBuilder.Entity("zapat.Models.Orden", b =>
                 {
-                    b.HasOne("zapat.Models.Orden", "Orden")
+                    b.HasOne("zapat.Models.Pago", "Pago")
                         .WithMany()
-                        .HasForeignKey("OrdenId");
+                        .HasForeignKey("PagoId");
 
-                    b.Navigation("Orden");
+                    b.Navigation("Pago");
                 });
 
             modelBuilder.Entity("zapat.Models.PreOrden", b =>

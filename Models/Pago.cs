@@ -24,6 +24,6 @@ namespace zapat.Models
         public Decimal MontoTotal { get; set; }
         public string? Status { get; set; }
         public string? UserName { get; set; }
-        public Orden? Orden { get; set; }
+        
     }
 }

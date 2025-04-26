@@ -5,6 +5,13 @@
 <ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))
 {
+
+    @if (User.IsInRole("admin") || User.IsInRole("owner")) {
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Contacto" asp-action="Index">Contacto</a>
+                        </li>
+    }
+
     <li class="nav-item">
         <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
     </li>
