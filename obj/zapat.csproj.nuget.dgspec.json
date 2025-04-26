@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ADMIN\\Desktop\\Proyecto\\zapat\\zapat.csproj": {}
+    "C:\\Users\\edutr\\OneDrive\\Escritorio\\Ultima version\\zapat\\zapat.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ADMIN\\Desktop\\Proyecto\\zapat\\zapat.csproj": {
+    "C:\\Users\\edutr\\OneDrive\\Escritorio\\Ultima version\\zapat\\zapat.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ADMIN\\Desktop\\Proyecto\\zapat\\zapat.csproj",
+        "projectUniqueName": "C:\\Users\\edutr\\OneDrive\\Escritorio\\Ultima version\\zapat\\zapat.csproj",
         "projectName": "zapat",
-        "projectPath": "C:\\Users\\ADMIN\\Desktop\\Proyecto\\zapat\\zapat.csproj",
-        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ADMIN\\Desktop\\Proyecto\\zapat\\obj\\",
+        "projectPath": "C:\\Users\\edutr\\OneDrive\\Escritorio\\Ultima version\\zapat\\zapat.csproj",
+        "packagesPath": "C:\\Users\\edutr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\edutr\\OneDrive\\Escritorio\\Ultima version\\zapat\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\edutr\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -55,9 +55,9 @@
               "target": "Package",
               "version": "[8.0.14, )"
             },
-            "Microsoft.EntityFrameworkCore.Sqlite": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.14, )"
+              "version": "[8.0.3, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
@@ -65,7 +65,11 @@
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[8.0.7, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.2, )"
             }
           },
           "imports": [
