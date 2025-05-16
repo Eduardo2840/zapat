@@ -27,26 +27,26 @@ namespace zapat.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var pedidos = from o in _context.DbSetOrden select o;
+            var pedidos = from o in _context.DbSetAdmin select o;
             pedidos = pedidos.Include(p => p.Pago).Where(s => s.Status.Contains("PENDIENTE"));
             return View(await pedidos.ToListAsync());
         }
 
         public async Task<IActionResult> Details(int? id)
         {
-            var itemsPedido = from o in _context.DbSetDetalleOrden select o;
+            var itemsAdmin = from o in _context.DbSetDetalleOrden select o;
 
-            itemsPedido = itemsPedido.
+            itemsAdmin = itemsAdmin.
                 Include(p => p.Producto).
-                Include(p => p.Orden).
+                Include(p => p.Admin).
                 Where(s => s.Id.Equals(id));
 
-            var itemsList = await itemsPedido.ToListAsync();
+            var itemsList = await itemsAdmin.ToListAsync();
             var itemsJson = JsonSerializer.Serialize(itemsList);
             _logger.LogInformation("Items en JSON: {json}", itemsJson);
 
 
-            return View(itemsList);
+            return View(itemsAdmin);
 
         }
 

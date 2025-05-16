@@ -18,7 +18,8 @@ namespace zapat.Models
         public int Cantidad { get; set; }
         public decimal Precio { get; set; }
        
-        public Orden? Orden { get; set; }	
+        public Orden? Orden { get; set; }
+        public Admin? Admin { get; set; }	
         
     }
 }

@@ -8,19 +8,20 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace zapat.Models
 {   
-    [Table("t_Producto")]
+    [Table("t_Admin")]
     public class Admin
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column("id")]
         public int Id { get; set; }
-        [NotNull]
-        public string? Name { get; set; }
-        [NotNull]
-        public Decimal Price { get; set; }
-        [NotNull]
+
+        public string? UserName { get; set; }
+
+        public Decimal Total { get; set; }
+
+        public DateTime Fecha { get; set; }
+
         public string? Status { get; set; }
-        [NotNull]
-        public string? ImageURL { get; set; }
     }
 }
