@@ -4,22 +4,98 @@
     ViewData["Title"] = "Detalles del Producto";
 }
 
-    <h1>Details</h1>
-    
-    <div class="container">
-            <div class="col-sm-4">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <div class="card-img-actions">
-                    <img class="img-responsive" width="96" height="150"
-                       src="@Html.DisplayFor(model => model.ImageURL)"  />
-                  </div>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">@Html.DisplayFor(model => model.Name)</h5>
-                  <h5 class="card-title">@Html.DisplayFor(model => model.Price)</h5>
-                  <a class="btn btn-primary" asp-controller="Carrito" asp-action="Add" asp-route-id="@Model.Id">Add</a>
-                </div>
-              </div>
+<div class="container py-5">
+    <div class="row">
+        <!-- Imagen del producto -->
+        <div class="col-lg-5 mt-5">
+            <div class="card mb-3">
+                <img class="img-fluid" src="@Model.ImageURL" alt="@Model.Name">
             </div>
+        </div>
+
+        <!-- Información del producto -->
+        <div class="col-lg-7 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="h2">@Model.Name</h1>
+                    <p class="h3 py-2">$@Model.Price</p>
+                    <p class="py-2">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-secondary"></i>
+                        <span class="list-inline-item text-dark">Rating 4.8 | 36 comentarios</span>
+                    </p>
+
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <h6>Marca:</h6>
+                        </li>
+                        <li class="list-inline-item">
+                            <p class="text-muted"><strong>Zatil</strong></p> <!-- Cambia si tienes una marca distinta -->
+                        </li>
+                    </ul>
+
+                    <h6>Descripción:</h6>
+                    <p>Este producto es ideal para quienes buscan estilo y comodidad. Zapatilla moderna y versátil que se adapta a todo tipo de ocasiones.</p>
+
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <h6>Colores disponibles:</h6>
+                        </li>
+                        <li class="list-inline-item">
+                            <p class="text-muted"><strong>Blanco / Negro</strong></p>
+                        </li>
+                    </ul>
+
+                    <h6>Especificaciones:</h6>
+                    <ul class="list-unstyled pb-3">
+                        <li>Material resistente</li>
+                        <li>Diseño ergonómico</li>
+                        <li>Suelas antideslizantes</li>
+                        <li>Livianas y cómodas</li>
+                    </ul>
+
+                    <form method="GET">
+                        <input type="hidden" name="product-title" value="@Model.Name">
+
+                        <div class="row">
+                            <div class="col-auto">
+                                <ul class="list-inline pb-3">
+                                    <li class="list-inline-item">Talla:
+                                        <input type="hidden" name="product-size" id="product-size" value="M">
+                                    </li>
+                                    <li class="list-inline-item"><span class="btn btn-success btn-size">S</span></li>
+                                    <li class="list-inline-item"><span class="btn btn-success btn-size">M</span></li>
+                                    <li class="list-inline-item"><span class="btn btn-success btn-size">L</span></li>
+                                    <li class="list-inline-item"><span class="btn btn-success btn-size">XL</span></li>
+                                </ul>
+                            </div>
+                            <div class="col-auto">
+                                <ul class="list-inline pb-3">
+                                    <li class="list-inline-item text-right">Cantidad:
+                                        <input type="hidden" name="product-quanity" id="product-quanity" value="1">
+                                    </li>
+                                    <li class="list-inline-item"><span class="btn btn-success" id="btn-minus">-</span></li>
+                                    <li class="list-inline-item"><span class="badge bg-secondary" id="var-value">1</span></li>
+                                    <li class="list-inline-item"><span class="btn btn-success" id="btn-plus">+</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="row pb-3">
+                            <div class="col d-grid">
+                                <a class="btn btn-success btn-lg" asp-controller="Carrito" asp-action="Add" asp-route-id="@Model.Id">Agregar al carrito</a>
+                            </div>
+                            <div class="col d-grid">
+                                <button type="submit" class="btn btn-outline-secondary btn-lg">Comprar ahora</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
     </div>
+</div>
