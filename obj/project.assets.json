@@ -8235,19 +8235,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\edutr\\.nuget\\packages\\": {}
+    "C:\\Users\\ADMIN\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\edutr\\OneDrive\\Escritorio\\ZATI\\zapat\\zapat.csproj",
+      "projectUniqueName": "C:\\Users\\ADMIN\\Desktop\\Nueva carpeta\\zapat\\zapat.csproj",
       "projectName": "zapat",
-      "projectPath": "C:\\Users\\edutr\\OneDrive\\Escritorio\\ZATI\\zapat\\zapat.csproj",
-      "packagesPath": "C:\\Users\\edutr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\edutr\\OneDrive\\Escritorio\\ZATI\\zapat\\obj\\",
+      "projectPath": "C:\\Users\\ADMIN\\Desktop\\Nueva carpeta\\zapat\\zapat.csproj",
+      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ADMIN\\Desktop\\Nueva carpeta\\zapat\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\edutr\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"

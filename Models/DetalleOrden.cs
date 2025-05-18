@@ -19,7 +19,7 @@ namespace zapat.Models
         public decimal Precio { get; set; }
        
         public Orden? Orden { get; set; }
-        public Admin? Admin { get; set; }	
+       
         
     }
 }

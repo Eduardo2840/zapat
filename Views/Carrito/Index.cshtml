@@ -112,7 +112,7 @@
     }
 </style>
 
-<div class="carrito-container"">
+<div class="carrito-container">
     <!-- Panel izquierdo con productos -->
     <div class="carrito-left">
         <h3>Productos en el carrito</h3>
@@ -143,7 +143,7 @@
             <hr />
             <p class="total">Total: <span>S/. @montoTotal</span></p>
         </div>
-        <button class="w-100 btn btn-lg btn-primary" asp-controller="Pago" asp-action="Create" asp-route-monto="@montoTotal">Continuar Compra</button>
+        <a class="btn btn-primary" asp-controller="Pago" asp-action="Create" asp-route-monto="@montoTotal">Pagar</a>
     </div>
     
 </div>
