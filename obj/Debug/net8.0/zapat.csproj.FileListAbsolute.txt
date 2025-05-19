@@ -1386,8 +1386,8 @@ C:\Users\edutr\OneDrive\Escritorio\ZATI\zapat\obj\Debug\net8.0\zapat.genruntimec
 C:\Users\edutr\OneDrive\Escritorio\ZATI\zapat\obj\Debug\net8.0\ref\zapat.dll
 C:\Users\ADMIN\Desktop\Nueva carpeta\zapat\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\ADMIN\Desktop\Nueva carpeta\zapat\bin\Debug\net8.0\appsettings.json
-C:\Users\ADMIN\Desktop\Nueva carpeta\zapat\bin\Debug\net8.0\app.db
 C:\Users\ADMIN\Desktop\Nueva carpeta\zapat\bin\Debug\net8.0\zapat.staticwebassets.runtime.json
+C:\Users\ADMIN\Desktop\Nueva carpeta\zapat\bin\Debug\net8.0\app.db
 C:\Users\ADMIN\Desktop\Nueva carpeta\zapat\bin\Debug\net8.0\zapat.exe
 C:\Users\ADMIN\Desktop\Nueva carpeta\zapat\bin\Debug\net8.0\zapat.deps.json
 C:\Users\ADMIN\Desktop\Nueva carpeta\zapat\bin\Debug\net8.0\zapat.runtimeconfig.json
