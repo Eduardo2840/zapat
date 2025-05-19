@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\Carrito.css"
     },
     {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\Nueva carpeta\\zapat\\wwwroot\\css\\Pago.css",
+      "PackagePath": "staticwebassets\\css\\Pago.css"
+    },
+    {
       "Id": "C:\\Users\\ADMIN\\Desktop\\Nueva carpeta\\zapat\\wwwroot\\css\\catalogo.css",
       "PackagePath": "staticwebassets\\css\\catalogo.css"
     },
@@ -67,6 +71,10 @@
     {
       "Id": "C:\\Users\\ADMIN\\Desktop\\Nueva carpeta\\zapat\\wwwroot\\img\\marca.png",
       "PackagePath": "staticwebassets\\img\\marca.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\Nueva carpeta\\zapat\\wwwroot\\img\\targeta.png",
+      "PackagePath": "staticwebassets\\img\\targeta.png"
     },
     {
       "Id": "C:\\Users\\ADMIN\\Desktop\\Nueva carpeta\\zapat\\wwwroot\\js\\index.js",

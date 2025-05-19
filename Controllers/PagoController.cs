@@ -84,8 +84,8 @@ namespace zapat.Controllers
 
             
 
-            ViewData["Message"] = "El pago se ha registrado y su pedido nro " + pedido.Id + " esta en camino";
-            return View("Create");
+           ViewData["Message"] = "El pago se ha registrado y su pedido nro " + pedido.Id + " está en camino";
+            return View("Create", pago);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

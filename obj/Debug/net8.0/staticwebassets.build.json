@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "eYLgBEna9d9noI++hF7CShxjN02AHDFHfF8WCLGeRpA=",
+  "Hash": "ITT4/L0O/PokZFXFzpkht1kTouHMqHjbcB4VLOVvV7E=",
   "Source": "zapat",
   "BasePath": "_content/zapat",
   "Mode": "Default",
@@ -1252,6 +1252,25 @@
       "OriginalItemSpec": "wwwroot\\css\\login.css"
     },
     {
+      "Identity": "C:\\Users\\ADMIN\\Desktop\\Nueva carpeta\\zapat\\wwwroot\\css\\Pago.css",
+      "SourceId": "zapat",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ADMIN\\Desktop\\Nueva carpeta\\zapat\\wwwroot\\",
+      "BasePath": "_content/zapat",
+      "RelativePath": "css/Pago.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Pago.css"
+    },
+    {
       "Identity": "C:\\Users\\ADMIN\\Desktop\\Nueva carpeta\\zapat\\wwwroot\\css\\site.css",
       "SourceId": "zapat",
       "SourceType": "Discovered",
@@ -1497,6 +1516,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\marca.png"
+    },
+    {
+      "Identity": "C:\\Users\\ADMIN\\Desktop\\Nueva carpeta\\zapat\\wwwroot\\img\\targeta.png",
+      "SourceId": "zapat",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ADMIN\\Desktop\\Nueva carpeta\\zapat\\wwwroot\\",
+      "BasePath": "_content/zapat",
+      "RelativePath": "img/targeta.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\targeta.png"
     },
     {
       "Identity": "C:\\Users\\ADMIN\\Desktop\\Nueva carpeta\\zapat\\wwwroot\\js\\index.js",
