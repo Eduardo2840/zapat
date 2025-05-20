@@ -12,120 +12,44 @@
 
 
 <link rel="stylesheet" href="~/css/templatemo.css" asp-append-version="true" />
-<style>
-    .carrito-container {
-        display: flex;
-    gap: 20px;
-    margin-top: 20px;
-    padding: 0 30px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    }
+<link rel="stylesheet" href="~/css/Carrito.css" asp-append-version="true" />
 
-    .carrito-left, .carrito-right {
-        background: #fff;
-        border-radius: 6px;
-        padding: 20px;
-        box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-    }
-
-    .carrito-left {
-        flex: 2;
-    }
-
-    .carrito-right {
-        flex: 1;
-        height: fit-content;
-    }
-
-    .producto-card {
-        display: flex;
-        gap: 30px;
-        margin-bottom: 20px;
-        border-bottom: 1px solid #eee;
-        padding-bottom: 15px;
-    }
-
-    .producto-card img {
-        width: 96px;
-        height: 150px;
-        object-fit: cover;
-        border-radius: 4px;
-    }
-
-    .producto-info {
-        flex: 1;
-    }
-
-    .producto-info h5 {
-        margin: 0;
-        font-size: 18px;
-        font-weight: bold;
-    }
-
-    .producto-info p {
-        margin: 5px 0;
-    }
-
-    .acciones a {
-        margin-right: 10px;
-        font-size: 14px;
-        color: #3483fa;
-        text-decoration: none;
-    }
-
-    .resumen p {
-        display: flex;
-        justify-content: space-between;
-        margin: 8px 0;
-    }
-    .item-imagen {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-    flex-shrink: 0;
-}
-
-    .resumen hr {
-        margin: 15px 0;
-        border: none;
-        border-top: 1px solid #ddd;
-    }
-
-    .resumen .total {
-        font-weight: bold;
-        font-size: 18px;
-    }
-
-    .btn-primary {
-        background-color: #3483fa;
-        border: none;
-        height: 45px;
-        font-size: 1rem;
-        border-radius: 10px;
-        font-weight: bold;
-    }
-
-    .btn-pagar:hover {
-        background-color: #2968c8;
-    }
-</style>
 
 <div class="carrito-container">
     <!-- Panel izquierdo con productos -->
     <div class="carrito-left">
-        <h3>Productos en el carrito</h3>
+        <h3 class="titulo">CARRITO DE COMPRAS</h3>
         @foreach (PreOrden item in Model.elementosCarrito)
         {
             <div class="producto-card">
                 <img src="@Html.DisplayFor(model => item.Producto.ImageURL)" />
                 <div class="producto-info">
-                    <h5>@Html.DisplayFor(modelItem => item.Producto.Name)</h5>
-                    <p>Cantidad: @Html.DisplayFor(modelItem => item.Cantidad)</p>
-                    <p>Precio: S/. @Html.DisplayFor(modelItem => item.Precio)</p>
+                    <div class="producto-texto">
+                        <h5>@Html.DisplayFor(modelItem => item.Producto.Name)</h5>
+                    </div>
+
+                    <div class="producto-interacciones">
+                        <div class="cantidad-controls">
+                            <form asp-action="Decrementar" method="post">
+                                <input type="hidden" name="id" value="@item.Id" />
+                                <button type="submit">−</button>
+                            </form>
+
+                            <span>@item.Cantidad</span>
+
+                            <form asp-action="Incrementar" method="post">
+                                <input type="hidden" name="id" value="@item.Id" />
+                                <button type="submit">+</button>
+                            </form>
+                        </div>
+
+                        <div class="precios">
+                           
+                            <p class="precio-descuento">S/ @item.Precio</p>
+                        </div>
+                    </div>
                     <div class="acciones">
-                        <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                      
                         <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
                     </div>
                 </div>
@@ -135,7 +59,7 @@
 
     <!-- Panel derecho con resumen -->
     <div class="carrito-right">
-        <h3>Resumen de compra</h3>
+        <h3 class="titulo-resumen">Resumen de compra</h3>
         <div class="resumen">
             <p>Productos: <span>S/. @montoTotal</span></p>
             <p>Envío: <span style="color: #00a650;">Gratis</span></p>

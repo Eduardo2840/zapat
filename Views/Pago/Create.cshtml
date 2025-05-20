@@ -29,7 +29,7 @@
             <div class="form-row">
                 <div class="form-group">
                     <label asp-for="DueDateYYMM" class="form-label">Fecha de vencimiento</label>
-                    <input asp-for="DueDateYYMM" class="form-control" placeholder="Mes / Año" />
+                    <input asp-for="DueDateYYMM" class="form-control" placeholder="MM/AA" />
                     <span asp-validation-for="DueDateYYMM" class="text-danger"></span>
                 </div>
 
@@ -51,13 +51,13 @@
         <h3>Resumen de compra</h3>
         <div class="resumen">
             <p><strong>Productos:</strong>
-                <span>@Model.MontoTotal.ToString("C0", new CultureInfo("es-PE"))</span>
+                <span>S/. @Model.MontoTotal</span>
                 <input type="hidden" asp-for="MontoTotal" />
             </p>
             <p>Envío: <span style="color: #00a650;">Gratis</span></p>
             <a href="#">Ingresar código de cupón</a>
             <hr />
-            <p class="total">Total: <span>@Model.MontoTotal.ToString("C0", new CultureInfo("es-PE"))</span>
+            <p class="total">Total: <span>S/. @Model.MontoTotal</span>
             <input type="hidden" asp-for="MontoTotal" />
             </p>
         </div>
