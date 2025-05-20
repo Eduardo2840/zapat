@@ -1,0 +1,140 @@
+@model IEnumerable<zapat.Models.Producto>
+@{
+    ViewData["Title"] = "Catalogo";
+}
+
+
+  <div class="cn-bg-1">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row d-flex align-items-center justify-content-around pb-5">
+          <div class="col-12 col-md-6 pb-3 pb-lg-5 pt-lg-5">
+            <h1>¡HOLA!<br>SOY ZATIL</h1>
+            <p>Soy una empresa peruana de zapatillas comprometida con la innovación, la calidad y el estilo. Creamos calzado que refleja tu personalidad y se adapta a tu ritmo de vida.</p>
+          </div>
+          <div class="col-12 col-md-6 text-center">
+            <div class="img-wrapper">
+                <img class="img-fluid circular-img shadow" src="~/img/marca.png" asp-append-version="true" alt="Zatil Diferencia" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid concepto">
+    <div class="container py-lg-5">
+      <div class="row mt-5 pt-4 d-flex justify-content-around">
+        <div class="col-12 col-md-5">
+          <div class="row valor">
+            <div class="col-12 text-center mb-4">
+              
+            </div>
+            <div class="col-12 p-5 valor-cont">
+              <h2 class="mb-5">NUESTRA PROPUESTA DE VALOR</h2>
+              <p>“En Zatil ofrecemos zapatillas que combinan comodidad, diseño y durabilidad, pensadas para quienes buscan destacar con cada paso.”</p>
+              
+                <img class="img-fluid rounded shadow" src="~/img/logo1.jpg" asp-append-version="true" alt="Zatil Propuesta de Valor" />
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-5 formato mt-5">
+          <h2 class="mb-4">Somos una marca que marca la diferencia</h2>
+          <p class="azul"><strong>¿Cómo lo logramos?</strong></p>
+          
+          <div class="azul">
+            <p>Diseñamos cada par con pasión y atención al detalle, usando materiales de alta calidad y procesos eficientes para ofrecerte lo mejor.</p>
+            <p><strong>¡Siempre buscamos mejorar!</strong> Estamos atentos a las últimas tendencias y necesidades de nuestros clientes para innovar constantemente.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-registro">
+    <div class="container-fluid banner-registro bg_cn_amarillo">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6 text-center">
+            <h2>Explora nuestra nueva colección</h2>
+            <a href="#">Ver productos</a>
+          </div>
+          <div class="col-12 col-md-6 text-center">
+            <div class="img-wrapper">
+              <img class="img-fluid rounded shadow" src="~/img/logo1.jpg" asp-append-version="true" alt="Zatil Colección" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid trabajo">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <h2>¿Quieres ser parte de Zatil?</h2>
+          <div class="azul">
+            <p><strong>Estamos en constante crecimiento y buscamos aliados estratégicos y emprendedores apasionados.</strong></p>
+            <p>Si estás interesado en distribuir nuestros productos o colaborar con nosotros, esta es tu oportunidad.</p>
+          </div><br>
+          <div class="text-center text-lg-start">
+            <a href="#">Contáctanos</a>
+            <a href="#">Únete al equipo</a>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 text-center">
+          <div class="img-wrapper">
+            <img class="img-fluid rounded shadow" src="~/img/logo1.jpg" asp-append-version="true" alt="Zatil Equipo" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center">
+          <h2 class="text-uppercase text-success mb-4">Misión</h2>
+          <p class="lead">Brindar calzado de alta calidad con diseños innovadores y cómodos, pensados para acompañar el día a día de nuestros clientes con estilo y confianza.</p>
+        </div>
+        <div class="col-md-6 text-center">
+          <h2 class="text-uppercase text-primary mb-4">Visión</h2>
+          <p class="lead">Ser reconocidos como la marca líder de zapatillas en Perú y expandirnos a nivel internacional, destacando por nuestro compromiso con la excelencia y la autenticidad.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">×</span>
+      <h4 class="text-center mt-4">Políticas de cambios y devoluciones</h4>
+      <p>Si necesitas hacer un cambio y/o devolución de algún producto, sigue estos pasos:</p>
+      <ol>
+        <li>Escríbenos o acércate a nuestro punto de venta autorizado.</li>
+        <li>Presenta el comprobante de compra y el producto en buen estado con su empaque original.</li>
+      </ol>
+      <p>¡Y listo!</p>
+      <h6>*En caso de productos defectuosos, aceptamos devoluciones hasta 7 días después de la compra.</h6>
+    </div>
+  </div>
+
+  
+
+<link rel="stylesheet" href="~/css/sobre.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/templatemo.css" asp-append-version="true" />
+
+<style>
+  .img-wrapper {
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: inline-block;
+    max-width: 100%;
+  }
+</style>

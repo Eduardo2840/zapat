@@ -8240,11 +8240,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\edutr\\OneDrive\\Escritorio\\ZATI\\zapat\\zapat.csproj",
+      "projectUniqueName": "C:\\Users\\edutr\\OneDrive\\Escritorio\\ZAT\\zapat\\zapat.csproj",
       "projectName": "zapat",
-      "projectPath": "C:\\Users\\edutr\\OneDrive\\Escritorio\\ZATI\\zapat\\zapat.csproj",
+      "projectPath": "C:\\Users\\edutr\\OneDrive\\Escritorio\\ZAT\\zapat\\zapat.csproj",
       "packagesPath": "C:\\Users\\edutr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\edutr\\OneDrive\\Escritorio\\ZATI\\zapat\\obj\\",
+      "outputPath": "C:\\Users\\edutr\\OneDrive\\Escritorio\\ZAT\\zapat\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\edutr\\AppData\\Roaming\\NuGet\\NuGet.Config"
