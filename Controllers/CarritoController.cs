@@ -35,10 +35,11 @@ namespace zapat.Controllers
                 ViewData["Message"] = "Por favor debe loguearse antes de agregar un producto";
                 return RedirectToAction("Index", "Catalogo");
             }
-            var items = from o in _context.DbSetPreOrden select o;
-            items = items.Include(p => p.Producto).
-                    Where(w => w.UserName.Equals(userIDSession) &&
-                        w.Status.Equals("PENDIENTE"));
+            var items = from o in _context.DbSetPreOrden
+                where o.UserName.Equals(userIDSession) && o.Status.Equals("PENDIENTE")
+                select o;
+
+            items = items.Include(p => p.Producto).OrderBy(o => o.Id); // Asegúrate de que estén ordenados por Id o alguna propiedad consistente.
             var itemsCarrito = items.ToList();
             var total = itemsCarrito.Sum(c => c.Cantidad * c.Precio);
 
@@ -73,6 +74,50 @@ namespace zapat.Controllers
                 return RedirectToAction("Index", "Catalogo");
             }
         }
+
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var preorden = await _context.DbSetPreOrden.FindAsync(id);
+            if (preorden != null)
+            {
+                _context.DbSetPreOrden.Remove(preorden);
+                await _context.SaveChangesAsync();
+                ViewData["Message"] = "Se elimino del carrito";
+                _logger.LogInformation("Se elimino un producto del carrito");
+            }
+            return RedirectToAction("Index", "Carrito");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Incrementar(int id)
+        {
+            var item = await _context.DbSetPreOrden.FindAsync(id);
+            if (item != null)
+            {
+                item.Cantidad++;
+                _context.Update(item);
+                await _context.SaveChangesAsync();
+            }
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Decrementar(int id)
+        {
+            var item = await _context.DbSetPreOrden.FindAsync(id);
+            if (item != null && item.Cantidad > 1)
+            {
+                item.Cantidad--;
+                _context.Update(item);
+                await _context.SaveChangesAsync();
+            }
+            return RedirectToAction(nameof(Index));
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
