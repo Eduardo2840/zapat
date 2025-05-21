@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Dynamic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -48,7 +49,9 @@ namespace zapat.Controllers
             model.elementosCarrito = itemsCarrito;
             return View(model);
         }
+        
 
+        [Authorize]
         public async Task<IActionResult> Add(int? id)
         {
             var userID = _userManager.GetUserName(User);
@@ -62,7 +65,7 @@ namespace zapat.Controllers
             {
                 var producto = await _context.DbSetProducto.FindAsync(id);
                 PreOrden proforma = new PreOrden();
-                
+
                 proforma.Producto = producto;
                 proforma.Precio = producto.Price;
                 proforma.Cantidad = 1;
