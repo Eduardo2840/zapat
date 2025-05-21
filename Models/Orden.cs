@@ -17,7 +17,7 @@ namespace zapat.Models
         public int Id { get; set; }
         public string? UserName { get; set; }
         public Decimal Total { get; set; }
-        public DateTime Fecha { get; set; }
+        public DateTime Fecha { get; set; } = DateTime.UtcNow;
         public Pago? Pago { get; set; }
         public string? Status { get; set; }
         
