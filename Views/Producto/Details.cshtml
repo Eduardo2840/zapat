@@ -1,42 +1,105 @@
 @model zapat.Models.Producto
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalles del Producto";
 }
 
-<h1>Details</h1>
+<!-- Estilo visual limpio y moderno -->
+<style>
+    body {
+        background-color: #f4faff;
+        font-family: 'Segoe UI', sans-serif;
+    }
 
-<div>
+    .details-container {
+        max-width: 900px;
+        margin: 50px auto;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        padding: 40px;
+    }
+
+    h1, h4 {
+        color: #59ab6e;
+        font-weight: 700;
+    }
+
+    dl.row dt {
+        font-weight: 600;
+        color: #333;
+    }
+
+    dl.row dd {
+        margin-bottom: 20px;
+        color: #555;
+    }
+
+    .product-image {
+        max-width: 100%;
+        border-radius: 10px;
+        margin-top: 15px;
+    }
+
+    .btn-group a {
+        margin-right: 10px;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 6px;
+        color: white;
+        background-color: #59ab6e;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-group a:hover {
+        background-color:#59ab6e;
+    }
+</style>
+
+<div class="details-container">
+    <h1 class="text-center mb-4">Detalles del Producto</h1>
+
     <h4>Producto</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-3">
             @Html.DisplayNameFor(model => model.Name)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-9">
             @Html.DisplayFor(model => model.Name)
         </dd>
-        <dt class = "col-sm-2">
+
+        <dt class="col-sm-3">
             @Html.DisplayNameFor(model => model.Price)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Price)
+        <dd class="col-sm-9">
+            $@Model.Price.ToString("0.00")
         </dd>
-        <dt class = "col-sm-2">
+
+        <dt class="col-sm-3">
             @Html.DisplayNameFor(model => model.Status)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-9">
             @Html.DisplayFor(model => model.Status)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImageURL)
+
+        <dt class="col-sm-3">
+            Imagen
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ImageURL)
+        <dd class="col-sm-9">
+            @if (!string.IsNullOrEmpty(Model.ImageURL))
+            {
+                <img src="@Model.ImageURL" alt="Producto" class="product-image" />
+            }
+            else
+            {
+                <p>Sin imagen disponible</p>
+            }
         </dd>
     </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+
+    <div class="btn-group mt-4">
+        <a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a>
+        <a asp-action="Index">Volver al listado</a>
+    </div>
 </div>
