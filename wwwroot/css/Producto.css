@@ -8,7 +8,7 @@ h1 {
   border-radius: 10px; /* Bordes redondeados */
 }
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: #f5f7fa;
   margin: 0;
   padding: 0;
@@ -38,7 +38,7 @@ body {
   flex: 1;
   margin-right: 15px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   font-weight: bold;
   display: flex;
   justify-content: space-between;
@@ -51,7 +51,7 @@ body {
 }
 
 .card-dashboard.active {
-  background-color:#59ab6e;
+  background-color: #59ab6e;
   color: #fff;
 }
 
@@ -85,7 +85,7 @@ body {
   border-collapse: collapse;
   background: #fff;
   border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .product-table th,
@@ -102,7 +102,7 @@ body {
 }
 
 .action-links a {
-  color: #59ab6e ;
+  color: #59ab6e;
   text-decoration: none;
   margin: 0 4px;
 }
@@ -113,7 +113,7 @@ body {
   padding: 20px;
   border-radius: 8px;
   text-align: center;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .circle-profile {

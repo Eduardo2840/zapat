@@ -1,15 +1,19 @@
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: #f4f8fb;
   color: #333;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: 700;
-  color: #003366;
+  color: #59ab6e;
 }
 
-.cn-bg-1, .concepto, .bg-registro, .trabajo {
+.cn-bg-1,
+.concepto,
+.bg-registro,
+.trabajo {
   background-color: #ffffff;
   border-radius: 20px;
   margin: 20px auto;
@@ -19,7 +23,7 @@ h1, h2 {
 
 .container h1 {
   font-size: 2.8rem;
-  color: #0d47a1;
+  color: #59ab6e;
 }
 
 .valor-cont,
@@ -33,15 +37,13 @@ h1, h2 {
 }
 
 .img-wrapper img {
-  border-radius: 16px;
   max-width: 100%;
   height: auto;
   object-fit: cover;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
 .bg_cn_amarillo {
-  background: linear-gradient(135deg, #008cff, #61a7ff);
+  background: linear-gradient(135deg, #59ab6e, #61a7ff);
   color: white;
   border-radius: 16px;
   padding: 30px;
@@ -56,7 +58,7 @@ h1, h2 {
   display: inline-block;
   margin-top: 15px;
   background-color: white;
-  color: #008cff;
+  color: #59ab6e;
   padding: 10px 20px;
   border-radius: 12px;
   font-weight: 600;
@@ -69,7 +71,7 @@ h1, h2 {
 }
 
 .azul {
-  color: #004a99;
+  color: #000000;
   font-weight: 500;
 }
 
@@ -86,9 +88,10 @@ h1, h2 {
   padding-left: 20px;
 }
 
-.text-center a, .text-lg-start a {
+.text-center a,
+.text-lg-start a {
   margin: 10px 10px 0 0;
-  background-color: #004a99;
+  background-color: #59ab6e;
   color: white;
   padding: 10px 16px;
   border-radius: 12px;
@@ -97,6 +100,7 @@ h1, h2 {
   transition: 0.3s;
 }
 
-.text-center a:hover, .text-lg-start a:hover {
-  background-color: #0066cc;
+.text-center a:hover,
+.text-lg-start a:hover {
+  background-color: #59ab6e;
 }
