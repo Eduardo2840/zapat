@@ -51,7 +51,7 @@ body {
 }
 
 .card-dashboard.active {
-  background-color: #007bff;
+  background-color:#59ab6e;
   color: #fff;
 }
 
@@ -73,7 +73,7 @@ body {
 }
 
 .btn-create {
-  background: #007bff;
+  background: #59ab6e;
   color: #fff;
   padding: 8px 12px;
   border-radius: 5px;
@@ -102,7 +102,7 @@ body {
 }
 
 .action-links a {
-  color: #007bff;
+  color: #59ab6e ;
   text-decoration: none;
   margin: 0 4px;
 }
@@ -119,7 +119,7 @@ body {
 .circle-profile {
   width: 60px;
   height: 60px;
-  background-color: #007bff;
+  background-color: #59ab6e;
   color: #fff;
   font-size: 24px;
   border-radius: 50%;

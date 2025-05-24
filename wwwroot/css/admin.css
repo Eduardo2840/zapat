@@ -1,6 +1,6 @@
 h1 {
   font-size: 36px;
-  color: #333; /* Color del texto */
+  color: #59ab6e; /* Color del texto */
   text-align: center; /* Centrado del texto */
   padding: 5px; /* Espacio interno alrededor del texto */
   margin: 5px 0; /* Margen superior e inferior de 40px, 0 en los lados */
@@ -33,7 +33,7 @@ body {
 }
 
 .topbar .install {
-  background: #2980b9;
+  background: #59ab6e;
   color: white;
   padding: 8px 12px;
   border: none;
@@ -66,7 +66,7 @@ body {
 }
 
 .card.active {
-  background: #2e86de;
+  background: #59ab6e;
   color: white;
 }
 
@@ -116,7 +116,7 @@ body {
 .profile .circle {
   width: 60px;
   height: 60px;
-  background: #2e86de;
+  background: #59ab6e;
   color: white;
   font-size: 32px;
   border-radius: 50%;
