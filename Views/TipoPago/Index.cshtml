@@ -1,0 +1,131 @@
+@model dynamic;
+@using System.Collections.Generic;
+@{
+    ViewData["Title"] = "TipoPago";
+    
+    IEnumerable<zapat.Models.PreOrden> listItemsCarrito = new List<PreOrden>();
+    listItemsCarrito = @Model.elementosCarrito;
+    Decimal montoTotal = @Model.montoTotal;
+}
+<link rel="stylesheet" href="~/css/templatemo.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/Carrito.css" asp-append-version="true" />
+
+
+
+
+<form>
+
+    <div class="carrito-container">
+        
+        <div class="carrito-left">
+            <h3 class="titulo">Elije cómo pagar</h3>
+            <div class="payment-options">
+                
+
+                <label class="payment-option">
+                    <input type="radio" name="metodoPago" value="debito" />
+                    <img src="https://http2.mlstatic.com/storage/buyingflow-core-assets-web/bf-assets/svg/bf_v6_debito_noborde.svg" alt="Tarjeta débito" />
+                    <span>Nueva tarjeta de débito</span>
+                </label>
+
+                <label class="payment-option">
+                    <input type="radio" name="metodoPago" />
+                    <img src="https://http2.mlstatic.com/storage/buyingflow-core-assets-web/bf-assets/svg/bf_v6_credito_noborde.svg" alt="Tarjeta crédito" />
+                    <span>Nueva tarjeta de crédito</span>
+                </label>
+
+                <label class="payment-option">
+                    <input type="radio" name="metodoPago" />
+                    <img src="https://http2.mlstatic.com/storage/buyingflow-core-assets-web/bf-assets/svg/bf_v6_efectivo_noborde.svg" alt="PagoEfectivo" />
+                    <div>
+                        <span>Transferencia vía PagoEfectivo</span>
+                        <small>Desde cualquier banca por internet o móvil</small>
+                    </div>
+                </label>
+
+                <label class="payment-option">
+                    <input type="radio" name="metodoPago" />
+                    <img src="https://http2.mlstatic.com/storage/buyingflow-core-assets-web/bf-assets/svg/bf_v6_efectivo_noborde.svg" alt="PagoEfectivo" />
+                    <div>
+                        <span>Depósito por PagoEfectivo</span>
+                        <small>En cualquier agente o agencia</small>
+                    </div>
+                </label>
+                <div class="paypal-container">
+                    
+                    <div id="paypal-button-container"></div>
+                </div>
+
+                <div class="continuar-wrapper">
+                    <button type="button" class="btn btn-primary btn-continuar" onclick="validarMetodoPago()">Continuar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="carrito-right">
+            <h3 class="titulo-resumen">Resumen de compra</h3>
+            <div class="resumen">
+                <p>Productos: <span>S/. @montoTotal</span></p>
+                <p>Envío: <span style="color: #00a650;">Gratis</span></p>
+                <a href="#">Ingresar código de cupón</a>
+                <hr />
+                <p class="total">Total: <span>S/. @montoTotal</span></p>
+            </div>
+           
+            
+        </div>
+    </div>
+</form>
+<h1>@ViewData["Message"]</h1>
+<br>
+  <link rel="stylesheet" href="~/css/TipoPago.css" asp-append-version="true">
+    
+<link rel="stylesheet" href="~/css/templatemo.css" asp-append-version="true" />
+
+<script>
+    function validarMetodoPago() {
+        const metodo = document.querySelector('input[name="metodoPago"]:checked');
+        if (metodo && metodo.value === "debito") {
+            // Redireccionar manualmente usando JavaScript
+            const monto = '@montoTotal';
+            window.location.href = `/Pago/Create?monto=${monto}`;
+        } else {
+            alert("Por favor selecciona 'Nueva tarjeta de débito' para continuar.");
+        }
+    }
+</script>
+
+@section Scripts {
+    <script src="https://www.paypal.com/sdk/js?client-id=@ViewBag.ClientId"></script>
+
+    <script>
+        paypal.Buttons({
+            style: {
+                layout: 'vertical',
+                color: 'silver',
+                tagline: 'false'
+            },
+            createOrder: (data, actions) => {
+                return fetch("@Url.Action("Order", "Checkout")", {
+                    method: "post"
+                }).then((response) => {
+                    if (!response.ok) {
+                        return response.json().then(error => { throw error; });
+                    }
+                    return response.json();
+                }).then((order) => order.id)
+                  .catch(error => alert(error.message));
+            },
+            onApprove: (data, actions) => {
+                return fetch(`@Url.Action("Capture", "Checkout")?orderId=${data.orderID}`, {
+                    method: "post"
+                }).then((response) => {
+                    if (!response.ok) {
+                        return response.json().then(error => { throw error; });
+                    }
+                    window.location.href = "@Url.Action("Success", "Checkout")";
+                }).catch(error => alert(error.message));
+            }
+        }).render('#paypal-button-container');
+    </script>
+}
