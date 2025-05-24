@@ -1,0 +1,147 @@
+h1 {
+  font-size: 36px;
+  color: #333; /* Color del texto */
+  text-align: center; /* Centrado del texto */
+  padding: 5px; /* Espacio interno alrededor del texto */
+  margin: 5px 0; /* Margen superior e inferior de 40px, 0 en los lados */
+  background-color: #f2f2f2; /* Fondo gris claro */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f6fa;
+  display: flex;
+}
+
+.main {
+  flex: 1;
+  padding: 0 30px;
+  
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar input {
+  padding: 8px;
+  width: 200px;
+}
+
+.topbar .install {
+  background: #2980b9;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  min-width: 120px;
+  text-align: center;
+  flex: 1;
+}
+
+.card.active {
+  background: #2e86de;
+  color: white;
+}
+
+.card span {
+  display: block;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.recent {
+  width: 70%;
+}
+
+.recent table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.recent th,
+.recent td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.recent img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profile {
+  width: 25%;
+  margin-left: 100%;
+  background: white;
+  padding: 100px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.profile .circle {
+  width: 60px;
+  height: 60px;
+  background: #2e86de;
+  color: white;
+  font-size: 32px;
+  border-radius: 50%;
+  display: inline-block;
+  line-height: 60px;
+  margin-bottom: 10px;
+}
+
+.profile .role {
+  color: green;
+  font-weight: bold;
+}
+
+.bottom-section {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Ajusta anchos */
+.recent {
+  width: 70%;
+}
+
+.profile {
+  width: 30%;
+  margin-left: 0; /* Ya no lo necesitas */
+}

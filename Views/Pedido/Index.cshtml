@@ -6,56 +6,60 @@
 <h1>Pedidos</h1>
 
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UserName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Total)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fecha)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Pago.Status)
-            </th>            
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th>Detalle</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model) {
+<body>
+    <div class="main">
+      
+      <div class="dashboard">
+        <div class="cards">
+          <div class="card">Pedidos <span>@Model.Count()</span></div>
+          <div class="card">Usuarios <span>1</span></div>
+          <div class="card">Productos <span>31</span></div>
+          <div class="card">Tiendas <span>8</span></div>
+        </div>
+
+        <div class="bottom-section">
+          <div class="recent">
+            
+            <table>
+              <thead>
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Id)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.UserName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Total)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Fecha)
-                    </td>    
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Pago.Status)
-                    </td>        
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Status)
-                    </td>
-                    <td>
-                        <a asp-action="Details" asp-route-id="@item.Id">Ver</a>
-                    </td>
+                  <th>@Html.DisplayNameFor(model => model.Id)</th>
+                  <th>@Html.DisplayNameFor(model => model.UserName)</th>
+                  <th>@Html.DisplayNameFor(model => model.Total)</th>
+                  <th>@Html.DisplayNameFor(model => model.Fecha)</th>
+                  <th>@Html.DisplayNameFor(model => model.Pago.Status)</th>
+                  <th>@Html.DisplayNameFor(model => model.Status)</th>
+                  <th>Detalle</th>
                 </tr>
-        }
-    </tbody>
-</table>
+              </thead>
+              <tbody>
+                @foreach (var item in Model)
+                {
+                  <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                    <td>@Html.DisplayFor(modelItem => item.UserName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Total)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Fecha)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Pago.Status)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Status)</td>
+                    <td>
+                      <a asp-action="Details" asp-route-id="@item.Id">Ver</a>
+                    </td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+
+          <div class="profile">
+            <div class="circle">a</div>
+            <p>admin<br/><span>admin@gmail.com</span><br/><span class="role">admin</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
 

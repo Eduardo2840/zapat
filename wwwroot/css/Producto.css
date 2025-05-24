@@ -1,0 +1,140 @@
+h1 {
+  font-size: 36px;
+  color: #333; /* Color del texto */
+  text-align: center; /* Centrado del texto */
+  padding: 5px; /* Espacio interno alrededor del texto */
+  margin: 5px 0; /* Margen superior e inferior de 40px, 0 en los lados */
+  background-color: #f2f2f2; /* Fondo gris claro */
+  border-radius: 10px; /* Bordes redondeados */
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+  padding: 0;
+}
+
+.container-dashboard {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.dashboard-title {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.cards-dashboard {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.card-dashboard {
+  background: #fff;
+  padding: 20px;
+  flex: 1;
+  margin-right: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #333;
+}
+
+.card-dashboard:last-child {
+  margin-right: 0;
+}
+
+.card-dashboard.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.bottom-section-dashboard {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.recent-dashboard {
+  flex: 3;
+  margin-right: 20px;
+}
+
+.title-section {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.btn-create {
+  background: #007bff;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.product-table th,
+.product-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.product-img {
+  width: 40px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.action-links a {
+  color: #007bff;
+  text-decoration: none;
+  margin: 0 4px;
+}
+
+.profile-dashboard {
+  flex: 1;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.circle-profile {
+  width: 60px;
+  height: 60px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 24px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.profile-info {
+  font-size: 14px;
+  color: #555;
+}
+
+.role-profile {
+  color: green;
+  font-weight: bold;
+}
