@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "A6RXn25D3jB+VNi2JARmVfjlzVCKxNw4pcqB6dQqvgY=",
+  "Hash": "mJ9jVifaGUHDtbNTEcZ1y9KXr4TB/Ej5mQCzRKmhCtw=",
   "Source": "zapat",
   "BasePath": "_content/zapat",
   "Mode": "Default",
@@ -1326,6 +1326,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\templatemo.css"
+    },
+    {
+      "Identity": "C:\\Users\\ADMIN\\Desktop\\Nueva carpeta (4)\\zapat\\wwwroot\\css\\TipoPago.css",
+      "SourceId": "zapat",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ADMIN\\Desktop\\Nueva carpeta (4)\\zapat\\wwwroot\\",
+      "BasePath": "_content/zapat",
+      "RelativePath": "css/TipoPago.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\TipoPago.css"
     },
     {
       "Identity": "C:\\Users\\ADMIN\\Desktop\\Nueva carpeta (4)\\zapat\\wwwroot\\favicon.ico",

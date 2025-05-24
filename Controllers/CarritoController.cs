@@ -47,6 +47,8 @@ namespace zapat.Controllers
             dynamic model = new ExpandoObject();
             model.montoTotal = total;
             model.elementosCarrito = itemsCarrito;
+            // Almacenar el monto total en TempData para su uso posterior
+            TempData["TotalAmount"] = total.ToString("F2");
             return View(model);
         }
         
