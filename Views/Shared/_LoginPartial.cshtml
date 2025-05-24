@@ -6,7 +6,14 @@
 @if (SignInManager.IsSignedIn(User))
 {
 
-    
+    @if (User.IsInRole("admin") || User.IsInRole("owner")) {
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="Index">Producto</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Pedido" asp-action="Index">Pedido</a>
+        </li>                                                 
+    }
    
 
     <li class="nav-item">
