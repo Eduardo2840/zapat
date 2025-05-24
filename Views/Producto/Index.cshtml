@@ -4,50 +4,67 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1 class="dashboard-title">Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageURL)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageURL)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<body>
+  <div class="container-dashboard">
+    <div class="main-dashboard">
+
+      <div class="dashboard">
+        <div class="cards-dashboard">
+          <div class="card-dashboard active">Productos <span>@Model.Count()</span></div>
+          <div class="card-dashboard">Usuarios <span>1</span></div>
+          <div class="card-dashboard">Pedidos <span>10</span></div>
+          <div class="card-dashboard">Tiendas <span>8</span></div>
+        </div>
+
+        <div class="bottom-section-dashboard">
+          <div class="recent-dashboard">
+            <h3 class="title-section">Lista de Productos</h3>
+            <p><a asp-action="Create" class="btn-create">Crear Nuevo</a></p>
+            <table class="product-table">
+              <thead>
+                <tr>
+                  <th>@Html.DisplayNameFor(model => model.Name)</th>
+                  <th>@Html.DisplayNameFor(model => model.Price)</th>
+                  <th>@Html.DisplayNameFor(model => model.Status)</th>
+                  <th>@Html.DisplayNameFor(model => model.ImageURL)</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                @foreach (var item in Model)
+                {
+                  <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Status)</td>
+                    <td><img src="@item.ImageURL" class="product-img" alt="Imagen del producto" /></td>
+                    <td class="action-links">
+                      <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                      <a asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
+                      <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+                    </td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+
+          <div class="profile-dashboard">
+            <div class="circle-profile">a</div>
+            <p class="profile-info">
+              admin<br />
+              <span>admin@gmail.com</span><br />
+              <span class="role-profile">admin</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<link rel="stylesheet" href="~/css/Producto.css" asp-append-version="true" />
+
+<link rel="stylesheet" href="~/css/Producto.css" asp-append-version="true" />
