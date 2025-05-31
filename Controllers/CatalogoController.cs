@@ -45,6 +45,14 @@ namespace zapat.Controllers
            
         }
 
+         public async Task<IActionResult> Hombre(int? id)
+        {
+            var productos = _context.DbSetProHombre.ToList();
+            _logger.LogInformation("Productos: {0}", productos);
+            return View(productos);
+        }
+        
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
