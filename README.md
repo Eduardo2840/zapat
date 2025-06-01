@@ -9,3 +9,5 @@ dotnet ef migrations add PostgressMigracion --context zapat.Data.ApplicationDbCo
 dotnet ef migrations add dosMigracion --context zapat.Data.ApplicationDbContext -o "C:\Users\edutr\OneDrive\Escritorio\zatilla\zapat\Data\Migrations"
 
 dotnet ef migrations add hombreMigracion --context zapat.Data.ApplicationDbContext -o "C:\Users\edutr\OneDrive\Escritorio\zatilla\zapat\Data\Migrations"
+
+dotnet ef migrations add mujerMigracion --context zapat.Data.ApplicationDbContext -o "C:\Users\edutr\OneDrive\Escritorio\zatilla\zapat\Data\Migrations"
