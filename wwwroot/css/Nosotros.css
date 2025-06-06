@@ -4,10 +4,40 @@ body {
   color: #333;
 }
 
+.fondo {
+  background-image: url('../img/nosotros.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;  /* Fija la imagen mientras se mueve el contenido */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contenido {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2rem 3rem;
+  border-radius: 15px;
+  text-align: center;
+  z-index: 2;
+}
+
 h1,
 h2 {
   font-weight: 700;
   color: #59ab6e;
+}
+
+h1 {
+  font-size: 3rem;
 }
 
 .cn-bg-1,
@@ -16,7 +46,7 @@ h2 {
 .trabajo {
   background-color: #ffffff;
   border-radius: 20px;
-  margin: 20px auto;
+  margin: 20px 0;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   padding: 40px;
 }
@@ -40,6 +70,7 @@ h2 {
   max-width: 100%;
   height: auto;
   object-fit: cover;
+  border-radius: 12px;
 }
 
 .bg_cn_amarillo {
@@ -50,15 +81,15 @@ h2 {
 }
 
 .bg_cn_amarillo h2 {
-  color: #ffffff;
+  color:#000000;
   font-size: 2rem;
 }
 
 .bg_cn_amarillo a {
   display: inline-block;
   margin-top: 15px;
-  background-color: white;
-  color: #59ab6e;
+  background-color: #000000 ;
+  
   padding: 10px 20px;
   border-radius: 12px;
   font-weight: 600;
@@ -90,17 +121,25 @@ h2 {
 
 .text-center a,
 .text-lg-start a {
-  margin: 10px 10px 0 0;
-  background-color: #59ab6e;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 12px;
-  text-decoration: none;
   display: inline-block;
-  transition: 0.3s;
+  margin: 10px 10px 0 0;
+  padding: 12px 28px;
+  background: linear-gradient(90deg, #59ab6e 0%, #61a7ff 100%);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(89, 171, 110, 0.15);
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
 }
 
 .text-center a:hover,
 .text-lg-start a:hover {
-  background-color: #59ab6e;
+  background: linear-gradient(90deg, #61a7ff 0%, #59ab6e 100%);
+  color: #000;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 24px rgba(97, 167, 255, 0.18);
 }
