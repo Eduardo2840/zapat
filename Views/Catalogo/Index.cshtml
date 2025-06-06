@@ -3,111 +3,6 @@
     ViewData["Title"] = "Catálogo";
 }
 
-<!-- Estilo personalizado -->
-<style>
-    body {
-        background-color: #f4faff;
-        font-family: 'Segoe UI', sans-serif;
-    }
-
-    .catalogo-container {
-        max-width: 1400px;
-        margin: auto;
-    }
-
-    .sidebar {
-        background: #ffffff;
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    }
-
-    .sidebar h2 {
-        font-size: 22px;
-        color: #59ab6e;
-        font-weight: 600;
-    }
-
-    .sidebar ul li a {
-        color: #333;
-        font-size: 16px;
-    }
-
-    .sidebar ul li a:hover {
-        color: #59ab6e;
-        font-weight: 500;
-    }
-
-    .shop-top-menu .list-inline-item a {
-        font-weight: 500;
-    }
-
-    .card {
-        border: none;
-        border-radius: 12px;
-        overflow: hidden;
-        transition: transform 0.3s ease;
-        background-color: #ffffff;
-    }
-
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    }
-
-    .card-img-actions img {
-        height: 250px;
-        object-fit: cover;
-        width: 100%;
-    }
-
-    .card-body {
-        padding: 15px;
-    }
-
-    .card-title {
-        font-size: 18px;
-        font-weight: 600;
-        color: #222;
-    }
-
-    .card-text {
-        font-size: 16px;
-        color: #59ab6e;
-    }
-
-    .btn-primary, .btn-info {
-        padding: 8px 16px;
-        border-radius: 6px;
-        font-size: 14px;
-    }
-
-    .btn-primary {
-        background-color: #59ab6e;
-        border: none;
-    }
-
-    .btn-primary:hover {
-        background-color: #59ab6e;
-    }
-
-    .btn-info {
-        background-color: #72d38a;
-        border: none;
-    }
-
-    .btn-info:hover {
-        background-color: #3abd5a;
-    }
-
-    select.form-control {
-        max-width: 250px;
-    }
-
-    
-    
-</style>
-
 <div class="container py-5 catalogo-container">
     <div class="row">
         <!-- Sidebar -->
@@ -115,18 +10,18 @@
             <h2 class="pb-4">Categorías</h2>
             <ul class="list-unstyled">
                 <li class="pb-3">
-                    <strong>Género</strong>
-                    <ul class="list-unstyled pl-3">
-                        <li><a asp-action="Hombre" class="btn-create">Hombre</a></li>
-                        <li><a asp-action="Mujer" class="btn-create">Mujer</a></li>
-                        <li><a class="text-decoration-none" href="#">Niño</a></li>
-                    </ul>
+                    <button class="accordion-btn">Género <i class="fa-solid fa-chevron-down"></i></button>
+                    <ul class="accordion-content">
+                    <li><a asp-action="Hombre">Hombre</a></li>
+                    <li><a asp-action="Mujer">Mujer</a></li>
+                <li><a href="#">Niño</a></li>
+            </ul>
                 </li>
                 <li class="pb-3">
-                    <strong>Tipo</strong>
-                    <ul class="list-unstyled pl-3">
-                        <li><a class="text-decoration-none" href="#">Deportivas</a></li>
-                        <li><a class="text-decoration-none" href="#">Lujo</a></li>
+                    <button class="accordion-btn">Tipo <i class="fa-solid fa-chevron-down"></i></button>
+                    <ul class="accordion-content">
+                        <li><a href="#">Deportivas</a></li>
+                        <li><a href="#">Lujo</a></li>
                     </ul>
                 </li>
             </ul>
@@ -137,7 +32,7 @@
             <div class="row align-items-center mb-4">
                 <div class="col-md-6">
                     <ul class="list-inline shop-top-menu mb-0">
-                        <li class="list-inline-item"><a class="h5 text-dark text-decoration-none mr-3" href="#">Todos</a></li>
+                        <li class="list-inline-item"><a class="h5 text-dark text-decoration-none mr-3" asp-area="" asp-controller="Catalogo" asp-action="Index">Todos</a></li>
                         <li class="list-inline-item"><a class="h5 text-dark text-decoration-none mr-3" href="#">Hombre</a></li>
                         <li class="list-inline-item"><a class="h5 text-dark text-decoration-none" href="#">Mujer</a></li>
                     </ul>
@@ -162,19 +57,20 @@
                                 <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
                             </div>
                             <div class="product-info">
+                                <div class="options-btn-container">
                                 <button class="options-btn">
-                                    <a class="options-text" asp-action="Details" asp-route-id="@item.Id">
-                                        <span class="options-text">Mostrar detalles</span>
-                                    </a>
-
+                                <a class="options-text" asp-action="Details" asp-route-id="@item.Id">
+                                    <span class="options-text">Mostrar detalles</span>
+                                </a>
                                     <span class="options-divider"></span>
-                                    <a  asp-controller="Carrito" asp-action="Add" asp-route-id="@item.Id">
-                                            <span class="options-icon">
-                                     <i class="fa-solid fa-bag-shopping"></i>
-                                        </span>
-                                    </a>
-
+                                <a asp-controller="Carrito" asp-action="Add" asp-route-id="@item.Id">
+                                    <span class="options-icon">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                </span>
+                                </a>
                                 </button>
+                                </div>
+
                                 <p class="product-name">@Html.DisplayFor(modelItem => item.Name)</p>
                                 <p class="price">$@Html.DisplayFor(modelItem => item.Price)</p>
                             </div>
@@ -187,98 +83,118 @@
 </div>
 
 
-
-
+<link rel="stylesheet" href="~/css/simple.css" asp-append-version="true" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-.product-card {
-  width: 220px;
-  border: 1px solid #ccc;
-  padding: 12px;
-  font-family: Arial, sans-serif;
-  position: relative;
-  box-sizing: border-box;
+.accordion-section {
+    margin-bottom: 15px;
 }
 
-.product-image {
-  position: relative;
-  text-align: center;
+.accordion-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    cursor: pointer;
+    color: #333;
 }
 
-.product-image img {
-  width: 100%;
-  height: auto;
+.accordion-btn i {
+    transition: transform 0.3s ease;
 }
 
-.wishlist-btn {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background: none;
-  border: none;
-  font-size: 18px;
-  color: #333;
-  cursor: pointer;
+.accordion-btn.active i {
+    transform: rotate(180deg);
 }
 
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    list-style: none;
+    padding-left: 15px;
+    margin: 0;
+}
+
+.accordion-content li a {
+    display: block;
+    padding: 6px 0;
+    color: #555;
+    text-decoration: none;
+}
+
+.accordion-content li a:hover {
+    color: #59ab6e;
+    font-weight: 500;
+}
+
+
+/* Asegura que el contenedor de botones esté oculto inicialmente */
+.options-btn-container {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Cuando el mouse entra en .product-card, se muestra */
+.product-card:hover .options-btn-container {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Tus estilos ya existentes para mantener el diseño */
 .options-btn {
-  background-color: black;
-  color: white;
-  border: none;
-  width: 100%;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  padding: 0;
+    background-color: black;
+    color: white;
+    border: none;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 0;
 }
 
-.options-text {
-  flex: 1;
-  text-align: center;
-  font-size: 13px;
-}
 
 .options-divider {
-  width: 1px;
-  height: 100%;
-  background-color: white;
+    width: 1px;
+    height: 100%;
+    background-color: white;
 }
 
 .options-icon {
-  width: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .options-icon i {
-  font-size: 16px;
-}
-
-.product-info {
-  text-align: left;
-  margin-top: 10px;
-}
-
-.product-name {
-  font-size: 14px;
-  margin: 5px 0 2px 0;
-  color: #333;
-}
-
-.brand {
-  font-size: 12px;
-  color: #666;
-  margin: 0 0 4px 0;
-}
-
-.price {
-  font-weight: bold;
-  color: #000;
-  font-size: 14px;
+    font-size: 16px;
 }
 
 </style>
+<script>
+    document.querySelectorAll('.accordion-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const content = btn.nextElementSibling;
+            const isActive = btn.classList.contains('active');
+
+            document.querySelectorAll('.accordion-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
+
+            if (!isActive) {
+                btn.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + 'px';
+            }
+        });
+    });
+</script>
+

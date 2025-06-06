@@ -37,6 +37,10 @@
       "PackagePath": "staticwebassets\\css\\login.css"
     },
     {
+      "Id": "C:\\Users\\edutr\\OneDrive\\Escritorio\\zatilla\\zapat\\wwwroot\\css\\simple.css",
+      "PackagePath": "staticwebassets\\css\\simple.css"
+    },
+    {
       "Id": "C:\\Users\\edutr\\OneDrive\\Escritorio\\zatilla\\zapat\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -87,6 +91,10 @@
     {
       "Id": "C:\\Users\\edutr\\OneDrive\\Escritorio\\zatilla\\zapat\\wwwroot\\img\\marca.png",
       "PackagePath": "staticwebassets\\img\\marca.png"
+    },
+    {
+      "Id": "C:\\Users\\edutr\\OneDrive\\Escritorio\\zatilla\\zapat\\wwwroot\\img\\nosotros.jpg",
+      "PackagePath": "staticwebassets\\img\\nosotros.jpg"
     },
     {
       "Id": "C:\\Users\\edutr\\OneDrive\\Escritorio\\zatilla\\zapat\\wwwroot\\img\\targeta.png",

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gU97DBosKWpgwdYeROXIw1Xr7K9zSTzPtVdbLdi7ISE=",
+  "Hash": "btolWqDS6ReZaPFwmdWchgW/NKGuxTRhEizY7cCkvNY=",
   "Source": "zapat",
   "BasePath": "_content/zapat",
   "Mode": "Default",
@@ -1328,6 +1328,25 @@
       "OriginalItemSpec": "wwwroot\\css\\Producto.css"
     },
     {
+      "Identity": "C:\\Users\\edutr\\OneDrive\\Escritorio\\zatilla\\zapat\\wwwroot\\css\\simple.css",
+      "SourceId": "zapat",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\edutr\\OneDrive\\Escritorio\\zatilla\\zapat\\wwwroot\\",
+      "BasePath": "_content/zapat",
+      "RelativePath": "css/simple.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\simple.css"
+    },
+    {
       "Identity": "C:\\Users\\edutr\\OneDrive\\Escritorio\\zatilla\\zapat\\wwwroot\\css\\site.css",
       "SourceId": "zapat",
       "SourceType": "Discovered",
@@ -1592,6 +1611,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\marca.png"
+    },
+    {
+      "Identity": "C:\\Users\\edutr\\OneDrive\\Escritorio\\zatilla\\zapat\\wwwroot\\img\\nosotros.jpg",
+      "SourceId": "zapat",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\edutr\\OneDrive\\Escritorio\\zatilla\\zapat\\wwwroot\\",
+      "BasePath": "_content/zapat",
+      "RelativePath": "img/nosotros.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\nosotros.jpg"
     },
     {
       "Identity": "C:\\Users\\edutr\\OneDrive\\Escritorio\\zatilla\\zapat\\wwwroot\\img\\targeta.png",
