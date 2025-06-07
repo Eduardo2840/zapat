@@ -18,6 +18,7 @@ public class ApplicationDbContext : IdentityDbContext
     public DbSet<ProMujer> DbSetProMujer { get; set; }
     public DbSet<Pago> DbSetPago { get; set; }
     public DbSet<PreOrden> DbSetPreOrden { get; set; }
+    public DbSet<Contacto> DbSetContactos { get; set; }
 
 
 }
