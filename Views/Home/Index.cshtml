@@ -88,6 +88,43 @@
         </a>
     </div>
 
+    <div class="banner">
+    <h1><strong>ZATIL - HASTA 30% OFF</strong></h1>
+    <p>Aprovecha las ofertas en cientos de productos</p>
+  
+    </div>
+
+
+    <div class="carousel-container position-relative">
+    <button class="nav-btn nav-left" id="slideLeft">&#8249;</button>
+
+    <div class="product-carousel" id="productCarousel">
+        @foreach (var item in Model)
+        {
+            <a class="product-tile-link" asp-controller="Catalogo" asp-action="Details" asp-route-id="@item.Id">
+                <div class="product-tile">
+
+                <div class="tile-image">
+                    <img src="@item.ImageURL" alt="@item.Name" />
+                    <span class="discount-badge">-30%</span>
+                    
+                </div>
+                <div class="tile-info">
+                    <p class="tile-name">@item.Name</p>
+                    <div class="tile-price">
+                        <span class="price-new">S/ @item.Price</span>
+                        <span class="price-old">S/ 199.90</span>
+                    </div>
+                    
+                </div>
+                </div>
+                
+            </a>
+
+        }
+    </div>
+<button class="nav-btn nav-right" id="slideRight">&#8250;</button>
+</div>
     <!-- Categorías -->
     <section class="container py-5">
         <div class="row text-center mb-4">
@@ -128,6 +165,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="~/css/templatemo.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/inicio.css" asp-append-version="true" />
 </body>
 
 <!-- Inicio Sección de Servicios -->
@@ -172,3 +210,41 @@
     </div>
 </section>
 <!-- Fin Sección de Servicios -->
+
+
+
+<script>
+  const slider = document.getElementById("productCarousel");
+  const slideLeft = document.getElementById("slideLeft");
+  const slideRight = document.getElementById("slideRight");
+
+  const scrollAmount = 250;
+  const autoplayInterval = 3000;
+
+  slideRight.addEventListener("click", () => {
+    scrollRight();
+  });
+
+  slideLeft.addEventListener("click", () => {
+    scrollLeft();
+  });
+
+  function scrollRight() {
+    if (slider.scrollLeft + slider.offsetWidth >= slider.scrollWidth - 1) {
+      slider.scrollLeft = 0;
+    } else {
+      slider.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  }
+
+  function scrollLeft() {
+    if (slider.scrollLeft <= 0) {
+      slider.scrollLeft = slider.scrollWidth;
+    } else {
+      slider.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    }
+  }
+
+  // Autoplay
+  setInterval(scrollRight, autoplayInterval);
+</script>

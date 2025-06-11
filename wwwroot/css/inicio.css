@@ -1,0 +1,166 @@
+.banner {
+  background-color: #59ab6e; 
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.banner h1 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.banner p {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.product-tile-link{
+ text-decoration: none;
+}
+
+
+.product-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 20px;
+  scrollbar-width: none; /* Firefox */
+}
+
+.product-carousel::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+.product-tile {
+  flex: 0 0 auto;
+  width: 220px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.product-tile:hover {
+  transform: translateY(-5px);
+}
+
+.tile-image {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  background: #f9f9f9;
+}
+
+.tile-image img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #59ab6e;
+  color: white;
+  font-size: 0.8rem;
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.wishlist-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  color: #555;
+  cursor: pointer;
+}
+
+.tile-info {
+    text-decoration: none;
+  padding: 10px 12px;
+  text-align: center;
+  background-color: #fff; /* Fondo blanco para resaltar el contenido */
+  border-radius: 8px; /* Bordes redondeados para armonizar con las imágenes */
+  
+}
+
+.tile-name {
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333; /* Color de texto más oscuro para mayor contraste */
+  
+}
+
+.tile-price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 1.1rem; 
+  color: #1a7f37; 
+  font-weight: 700; 
+
+}
+.price-new {
+  color: red;
+  font-weight: bold;
+}
+
+.price-old {
+  text-decoration: line-through;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.tile-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 160px;
+  background-color: white;
+  border: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10;
+  padding: 6px 12px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+}
+
+.nav-btn:hover {
+  transform: scale(1.1);
+}
+
+.nav-left {
+  left: 10px;
+}
+
+.nav-right {
+  right: 10px;
+}
+
