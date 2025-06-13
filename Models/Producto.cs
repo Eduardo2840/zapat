@@ -19,6 +19,7 @@ namespace zapat.Models
         [NotNull]
         public Decimal Price { get; set; }
         [NotNull]
+        
         public string? Status { get; set; }
         [NotNull]
         public string? ImageURL { get; set; }

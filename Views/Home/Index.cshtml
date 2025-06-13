@@ -112,8 +112,8 @@
                 <div class="tile-info">
                     <p class="tile-name">@item.Name</p>
                     <div class="tile-price">
-                        <span class="price-new">S/ @item.Price</span>
-                        <span class="price-old">S/ 199.90</span>
+                        <span class="price-new">@ViewBag.Currency @item.Price</span>
+                        <span class="price-old">@ViewBag.Currency @(Math.Round(item.Price * 1.3m, 2))</span>
                     </div>
                     
                 </div>

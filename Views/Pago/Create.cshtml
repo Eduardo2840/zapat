@@ -51,13 +51,13 @@
         <h3>Resumen de compra</h3>
         <div class="resumen">
             <p><strong>Productos:</strong>
-                <span>S/. @Model.MontoTotal</span>
+                <span>@ViewBag.Currency @Model.MontoTotal</span>
                 <input type="hidden" asp-for="MontoTotal" />
             </p>
             <p>Envío: <span style="color: #00a650;">Gratis</span></p>
             <a href="#">Ingresar código de cupón</a>
             <hr />
-            <p class="total">Total: <span>S/. @Model.MontoTotal</span>
+            <p class="total">Total: <span>@ViewBag.Currency @Model.MontoTotal</span>
             <input type="hidden" asp-for="MontoTotal" />
             </p>
         </div>

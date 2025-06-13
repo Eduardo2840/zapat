@@ -9,32 +9,68 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using zapat.Data;
 using zapat.Models;
+using zapat.Services;
 
 namespace zapat.Controllers
 {
     
     public class PagoController : Controller
     {
-        private readonly ILogger<PagoController> _logger;
         private readonly UserManager<IdentityUser> _userManager;
+        private readonly ILogger<CatalogoController> _logger;
         private readonly ApplicationDbContext _context;
+        private readonly CurrencyService _currencyService;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public PagoController(ILogger<PagoController> logger,
-            UserManager<IdentityUser> userManager,
-            ApplicationDbContext context)
+        public PagoController(ILogger<CatalogoController> logger, ApplicationDbContext context, CurrencyService currencyService, IHttpContextAccessor httpContextAccessor, UserManager<IdentityUser> userManager)
         {
-            _logger = logger;
+            
             _userManager = userManager;
+            _logger = logger;
             _context = context;
+            _currencyService = currencyService;
+            _httpContextAccessor = httpContextAccessor;
         }
 
-        public IActionResult Create(decimal monto)
+        public async Task<IActionResult> Create()
         {
 
-            Pago pago = new Pago();
-            pago.UserName = _userManager.GetUserName(User);
-            pago.MontoTotal = monto;
-            _logger.LogInformation("El monto es: ${monto}", pago.MontoTotal.ToString());
+            var userIDSession = _userManager.GetUserName(User);
+            if (userIDSession == null)
+            {
+                ViewData["Message"] = "Debe iniciar sesión para realizar un pago.";
+                return RedirectToAction("Index", "Catalogo");
+            }
+
+            // Obtener todos los ítems pendientes del carrito
+            var items = _context.DbSetPreOrden
+                        .Where(o => o.UserName == userIDSession && o.Status == "PENDIENTE")
+                        .Include(p => p.Producto)
+                        .OrderBy(o => o.Id)
+                        .ToList();
+
+            // Obtener la moneda seleccionada
+            var selectedCurrency = HttpContext.Session.GetString("Currency") ?? "USD";
+            decimal rate = 1;
+
+            if (selectedCurrency != "USD")
+            {
+                rate = await _currencyService.GetExchangeRateAsync("USD", selectedCurrency);
+            }
+
+            // Calcular monto total convertido
+            decimal total = items.Sum(i => i.Cantidad * i.Precio);
+            decimal montoConvertido = Math.Round(total * rate, 2);
+
+            Pago pago = new Pago
+            {
+                UserName = userIDSession,
+                MontoTotal = montoConvertido
+            };
+
+            _logger.LogInformation("Monto convertido: {0} {1}", montoConvertido, selectedCurrency);
+            ViewBag.Currency = selectedCurrency;
+
             return View(pago);
         }
 

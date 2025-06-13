@@ -10,28 +10,32 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using zapat.Data;
 using zapat.Models;
+using zapat.Services;
 
 namespace zapat.Controllers
 {
     
     public class TipoPagoController : Controller
     {
-        private readonly ILogger<PagoController> _logger;
         private readonly UserManager<IdentityUser> _userManager;
+        private readonly ILogger<CatalogoController> _logger;
         private readonly ApplicationDbContext _context;
+        private readonly CurrencyService _currencyService;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
         
 
-        public TipoPagoController(ILogger<PagoController> logger,
-            UserManager<IdentityUser> userManager,
-            ApplicationDbContext context)
+        public TipoPagoController(ILogger<CatalogoController> logger, ApplicationDbContext context, CurrencyService currencyService, IHttpContextAccessor httpContextAccessor, UserManager<IdentityUser> userManager)
         {
-            _logger = logger;
+            
             _userManager = userManager;
+            _logger = logger;
             _context = context;
+            _currencyService = currencyService;
+            _httpContextAccessor = httpContextAccessor;
         }
 
-        public IActionResult Index(decimal monto)
+        public async Task<IActionResult> Index(decimal monto)
         {
             var userIDSession = _userManager.GetUserName(User);
             if (userIDSession == null)
@@ -44,6 +48,22 @@ namespace zapat.Controllers
                 select o;
             items = items.Include(p => p.Producto).OrderBy(o => o.Id);
             var itemsCarrito = items.ToList();
+
+             // Obtener moneda seleccionada
+            var selectedCurrency = HttpContext.Session.GetString("Currency") ?? "USD";
+            decimal rate = 1;
+
+            if (selectedCurrency != "USD")
+            {
+                rate = await _currencyService.GetExchangeRateAsync("USD", selectedCurrency);
+            }
+
+            // Convertir precios
+            foreach (var item in itemsCarrito)
+            {
+                item.Precio = Math.Round(item.Precio * rate, 2);
+            }
+
             var total = itemsCarrito.Sum(c => c.Cantidad * c.Precio);
             dynamic model = new ExpandoObject();
             model.montoTotal = total;
@@ -51,7 +71,7 @@ namespace zapat.Controllers
             // Almacenar el monto total en TempData para su uso posterior
             ViewBag.ClientId = "AadGUZ-ytOxd0qAzUW-ZbBYuIgz87ZOa341LxVz8bTJCL-R0OEGYv3eBxf-CnPDNC0lbFqIx8tIwhJV-";
             TempData["TotalAmount"] = total.ToString("F2");
-            
+            ViewBag.Currency = selectedCurrency;
             return View(model);
         }
 
