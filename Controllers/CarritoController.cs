@@ -11,24 +11,32 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using zapat.Data;
 using zapat.Models;
+using zapat.Services;
 
 namespace zapat.Controllers
 {
-    
+
     public class CarritoController : Controller
     {
-        private readonly ILogger<CarritoController> _logger;
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly ApplicationDbContext _context;
-
-        public CarritoController(ILogger<CarritoController> logger, UserManager<IdentityUser> userManager, ApplicationDbContext context)
-        {
-            _logger = logger;
-            _userManager = userManager;
-            _context = context;
-        }
         
-        public IActionResult Index()
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly ILogger<CatalogoController> _logger;
+        private readonly ApplicationDbContext _context;
+        private readonly CurrencyService _currencyService;
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
+        public CarritoController(ILogger<CatalogoController> logger, ApplicationDbContext context, CurrencyService currencyService, IHttpContextAccessor httpContextAccessor, UserManager<IdentityUser> userManager)
+        {
+            
+            _userManager = userManager;
+            _logger = logger;
+            _context = context;
+            _currencyService = currencyService;
+            _httpContextAccessor = httpContextAccessor;
+        }
+
+
+        public async Task<IActionResult> Index()
         {
             var userIDSession = _userManager.GetUserName(User);
             if (userIDSession == null)
@@ -37,11 +45,25 @@ namespace zapat.Controllers
                 return RedirectToAction("Index", "Catalogo");
             }
             var items = from o in _context.DbSetPreOrden
-                where o.UserName.Equals(userIDSession) && o.Status.Equals("PENDIENTE")
-                select o;
+                        where o.UserName.Equals(userIDSession) && o.Status.Equals("PENDIENTE")
+                        select o;
 
             items = items.Include(p => p.Producto).OrderBy(o => o.Id); // Asegúrate de que estén ordenados por Id o alguna propiedad consistente.
             var itemsCarrito = items.ToList();
+
+            var selectedCurrency = HttpContext.Session.GetString("Currency") ?? "USD";
+            decimal rate = 1;
+            if (selectedCurrency != "USD")
+            {
+                rate = await _currencyService.GetExchangeRateAsync("USD", selectedCurrency);
+            }
+
+            // === AGREGADO: Aplicar tasa a precios ===
+            foreach (var item in itemsCarrito)
+            {
+                item.Precio = Math.Round(item.Precio * rate, 2);
+            }
+
             var total = itemsCarrito.Sum(c => c.Cantidad * c.Precio);
 
             dynamic model = new ExpandoObject();
@@ -49,9 +71,10 @@ namespace zapat.Controllers
             model.elementosCarrito = itemsCarrito;
             // Almacenar el monto total en TempData para su uso posterior
             TempData["TotalAmount"] = total.ToString("F2");
+            ViewBag.Currency = selectedCurrency;
             return View(model);
         }
-        
+
 
         [Authorize]
         public async Task<IActionResult> Add(int? id)

@@ -72,7 +72,7 @@
                                 </div>
 
                                 <p class="product-name">@Html.DisplayFor(modelItem => item.Name)</p>
-                                <p class="price">$@Html.DisplayFor(modelItem => item.Price)</p>
+                                <p class="price">@ViewBag.Currency @item.Price</p>
                             </div>
                         </div>
                     </div>

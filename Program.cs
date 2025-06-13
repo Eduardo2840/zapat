@@ -5,6 +5,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL;
 using Microsoft.OpenApi.Models;
 using zapat.Service;
 using zapat.Client;
+using zapat.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +25,12 @@ builder.Services.AddSingleton(x => new PayPalClient(
     builder.Configuration["PayPalOptions:ClientId"],
     builder.Configuration["PayPalOptions:ClientSecret"],
     builder.Configuration["PayPalOptions:Mode"]));
+
+    //cURRENCY
+builder.Services.AddHttpClient();
+builder.Services.AddSingleton<CurrencyService>();
+builder.Services.AddSession();
+
 
 //Registro mi logica customizada y reuzable
 builder.Services.AddScoped<ProductoService, ProductoService>();
@@ -54,6 +61,10 @@ else
     app.UseHsts();
 }
 
+
+
+
+app.UseSession();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
