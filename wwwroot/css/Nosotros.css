@@ -5,10 +5,10 @@ body {
 }
 
 .fondo {
-  background-image: url('../img/nosotros.jpg');
+  background-image: url("../img/sobre1.jpg");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;  /* Fija la imagen mientras se mueve el contenido */
+  background-attachment: fixed; /* Fija la imagen mientras se mueve el contenido */
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -23,7 +23,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
-  background: rgba(0, 0, 0, 0.5);
+
   padding: 2rem 3rem;
   border-radius: 15px;
   text-align: center;
@@ -74,22 +74,22 @@ h1 {
 }
 
 .bg_cn_amarillo {
-  background: linear-gradient(135deg, #59ab6e, #61a7ff);
+  background: linear-gradient(135deg, #3f4641, #f1b150);
   color: white;
   border-radius: 16px;
   padding: 30px;
 }
 
 .bg_cn_amarillo h2 {
-  color:#000000;
+  color: #000000;
   font-size: 2rem;
 }
 
 .bg_cn_amarillo a {
   display: inline-block;
   margin-top: 15px;
-  background-color: #000000 ;
-  
+  background-color: #000000;
+
   padding: 10px 20px;
   border-radius: 12px;
   font-weight: 600;
@@ -119,27 +119,24 @@ h1 {
   padding-left: 20px;
 }
 
-.text-center a,
-.text-lg-start a {
+.text-sobre {
   display: inline-block;
-  margin: 10px 10px 0 0;
-  padding: 12px 28px;
-  background: linear-gradient(90deg, #59ab6e 0%, #61a7ff 100%);
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #5AAB6E;
   color: #fff;
-  font-weight: 600;
-  border: none;
+  font-weight: bold;
   border-radius: 25px;
   text-decoration: none;
-  box-shadow: 0 4px 16px rgba(89, 171, 110, 0.15);
-  transition: background 0.3s, color 0.3s, transform 0.2s;
-  font-size: 1.1rem;
-  letter-spacing: 1px;
+  box-shadow: 0 4px 12px rgba(89, 171, 110, 0.2);
+  transition: all 0.3s ease;
+  font-size: 1rem;
 }
 
-.text-center a:hover,
-.text-lg-start a:hover {
-  background: linear-gradient(90deg, #61a7ff 0%, #59ab6e 100%);
-  color: #000;
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 24px rgba(97, 167, 255, 0.18);
+.text-sobre:hover {
+  background-color: #4C8D56;
+  transform: translateY(-3px);
 }
+
+
+
