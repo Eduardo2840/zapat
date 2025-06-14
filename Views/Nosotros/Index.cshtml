@@ -18,11 +18,11 @@
       <div class="row">
         <div class="col-12 col-md-6 text-center">
           <h2>Explora nuestra nueva colección</h2>
-          <a href="#">Ver productos</a>
+          <a class="text-sobre"  asp-controller="Catalogo" asp-action="Index">Productos</a>
         </div>
         <div class="col-12 col-md-6 text-center">
-          <div class="img-wrapper">
-            <img class="img-fluid rounded shadow" src="~/img/logo1.jpg" alt="Zatil Colección" />
+          <div class="contenedor">
+              <img src="~/img/sobre2.gif" asp-append-version="true" class="rounded-circle img-fluid border" alt="Zapatillas Hombres" />
           </div>
         </div>
       </div>
@@ -37,9 +37,9 @@
         <h2>¿Quieres ser parte de Zatil?</h2>
         <p><strong>Estamos en constante crecimiento y buscamos aliados estratégicos y emprendedores apasionados.</strong></p>
         <p>Si estás interesado en distribuir nuestros productos o colaborar con nosotros, esta es tu oportunidad.</p>
-        <div class="text-center text-lg-start">
-          <a href="#">Contáctanos</a>
-          <a href="#">Únete al equipo</a>
+        <div class="text-sobre">
+          <a class="nav-link text-dark" asp-area="" asp-controller="Contacto" asp-action="Index">Contactanos</a>
+          
         </div>
       </div>
       <div class="col-12 col-md-6 text-center">
@@ -71,3 +71,24 @@
 
 <link rel="stylesheet" href="~/css/Nosotros.css" asp-append-version="true" />
 <link rel="stylesheet" href="~/css/templatemo.css" asp-append-version="true" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+  .contenedor {
+    position: relative; 
+    width: 100%; 
+    height: 100%; 
+    overflow: hidden; 
+}
+
+.contenedor img {
+    width: 50%; 
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 50%; 
+     object-position: right center;
+}
+
+
+
+</style>
